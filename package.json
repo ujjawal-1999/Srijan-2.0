@@ -1,0 +1,25 @@
+{
+  "name": "event",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e js,html,css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "hbs": "^4.0.5",
+    "mongoose": "^5.7.3",
+    "nodemon": "^1.19.2",
+    "pdfkit": "^0.10.0",
+    "validator": "^11.1.0"
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Paytm Page</title>
+    </head>
+    <body>
+        <form action="/paytmPath/generate_checksum" method="post" name="startdata">
+            <input name="MID"  value="{{docs.MID}}" hidden>
+            <input name="ORDER_ID" value="{{docs.ORDER_ID}}" hidden>
+            <input name="CUST_ID" value="{{docs.CUST_ID}}" hidden>
+            <input name="INDUSTRY_TYPE_ID" value="Retail" hidden>
+            <input name="CHANNEL_ID" value="WEB" hidden>
+            <input name="TXN_AMOUNT" value="{{docs.TXN_AMOUNT}}" hidden>
+            <input name="WEBSITE" value="DEFAULT" hidden>
+            <input name="CHECKSUMHASH" value="" hidden>
+            <input name="CALLBACK_URL" value="{{cb}}" hidden>
+            <input name="EMAIL" value="{{docs.EMAIL}}" hidden>
+            <input name="MOBILE_NO" value="{{docs.MOBILE_NO}}" hidden><br>
+        
+         <script type="text/javascript">
+            document.startdata.submit();
+         </script>
+         </form>
+    </body>
+</html>

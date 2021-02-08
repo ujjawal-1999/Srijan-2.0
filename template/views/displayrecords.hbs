@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>SRIJAN | NIT SILCHAR</title>
+
+	<link rel="icon" href="docsupport/bulb6-slow.gif" type="image/gif" sizes="16x16">
+
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+	<link type="text/css" rel="stylesheet" href="/css/loader.css" />
+
+	
+	<!--[if lt IE 9]>
+			  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			<![endif]-->
+
+		<style>
+			.drop-shadow{
+				-webkit-box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.4); 
+				box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.4);
+				padding: 1%;
+				min-height: 300px;
+				min-width: 90%;
+				max-height: 90%;
+				border: 0px;
+			}
+			.drop-shadow > table{
+				margin-top: 2%;
+			}
+			.teamInfo{
+				color: #8f001e;
+				font-size: 1.5em;
+				letter-spacing: 2px;
+			}
+			.teamRow{
+				cursor: pointer;
+			}
+			.modal-body h6{
+					display: inline;
+					margin-right: 5px;
+				}
+			.teamInfoLink{
+				color: #000;
+				
+			}
+			.teamInfoLink:hover{
+				color: #000;
+			}
+		</style>
+</head>
+<body>
+
+  <div class="preloader"><span class="preloader-gif"></span></div>
+  <div class="container-fluid drop-shadow" style="margin-top: 20px;">
+		<div class="row text-center">
+			<div class="col-md-6">Do Not Show Fee Defaulter<input type="checkbox" name="fee_paid" id="fee_paid" style="margin-left: 10px;"></div>
+			<div class="col-md-6">
+				Filter: 
+				<select id="eventSelect"  style="margin-left: 10px;">
+					<option value="">Select One</option>
+					{{#each options}}
+						<option value="{{this}}">{{this}}</option>
+					{{/each}}
+				</select>
+			</div>
+		</div>
+		<div class="text-center teamInfo">
+			<span>
+				Switch To 
+				{{#if event}}
+					<a href="/register/views/fetchWorkshops" class="teamInfoLink">Workshop</a>
+				{{else}}
+					<a href="/register/views/fetchEvents" class="teamInfoLink">Events</a>
+				{{/if}}
+			</span>
+		</div>		
+		<div class="text-center teamInfo"><span><span id="numTeam">0</span> teams found</span></div>
+		<div>
+			{{#if event}}
+				<a href="" id="printPDF" target="_blank" style="color: #000;">Print Document</a>
+			{{else}}
+				<a href="/register/views/pdf/workshop" target="_blank" style="color: #000;">Print Document</a>
+			{{/if}}
+		</div>
+
+		<table class="table table-stripped table-hover">
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Fee Paid</th>
+        <th>College Name</th>
+				<th>Events/Workshops</th>
+				<th>Mail Sent</th>
+      </tr>
+    </thead>
+			<tbody id="tbody">
+    </tbody>
+  </table>
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h3 class="modal-title">Header</h3>
+					<span class="modal-email"></span>
+				</div>
+				<div class="modal-body">
+					
+					<p>Some text in the modal.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	</div>
+<!-- Footer -->
+	<footer id="footer">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+	
+					<!-- footer logo -->
+					<div class="col-md-4 col-md-push-4">
+						<div class="footer-brand">
+							<a class="logo" href="../../index.html">
+								<img class="logo-img" src="/img/E-CELL 1.png"width="240px"height="100px" alt="logo">
+							</a>
+						</div>
+					</div>
+					<!-- /footer logo -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</footer>
+        <!-- /Footer -->
+
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.stellar.min.js"></script>
+  <script src = "/js/loader.js"></script>
+  <script>
+
+		const dataArr = JSON.parse(decodeURIComponent("{{{encodedData}}}"));
+    $(window).on("load",function(){
+			$(document).on('click','.teamRow',function(){
+				const index=$(this).data("clickindex");
+				$('.modal-title').text(dataArr[index].teamName);
+				$('.modal-email').text(dataArr[index].mailId);
+				$('.modal-body').html(modalHTML(dataArr[index]));
+			});
+      $(".loader-wrapper").fadeOut("slow");
+			$("#fee_paid").on('change', ()=>{
+				viewList();
+			});
+			$('#eventSelect').on('change', (event)=>{
+				viewList();
+			});
+			viewList();
+			
+    });
+		function viewList(){
+			
+			if($('#eventSelect').val()!==""){
+				$('#printPDF').attr("href", `/register/views/pdf/${$('#eventSelect').val()}`);
+			}
+			else{
+				$('#printPDF').attr("href", '');
+			}
+			let count=0;
+			const html = dataArr.map((data, index)=>{
+				const dropDownValue = $('#eventSelect').val();
+
+				if(!data.events || (dropDownValue==="" || data.events.indexOf(dropDownValue)>-1)){
+
+					if($('input[name=fee_paid]:checked').length > 0){
+						if(data.transactionID){
+							count++;
+							return templateList(data, index)
+						}
+					}
+					else{
+						count++;
+						return templateList(data, index);
+					}
+				}
+
+			});
+			$('#numTeam').text(count);
+			$('#tbody').html(html);
+		}
+		function templateList(data, index){
+			return(`
+			<tr ${data.teamName && 'data-toggle="modal" data-target="#myModal"'} class="teamRow" data-clickindex="${index}">
+			<td>${data.teamName || data.name}</td>
+			<td>${data.mailId}</td>
+			<td>${data.mobileNumber}</td>
+			<td>${data.transactionID ? data.transactionID : '<span style="color:#dd0a37;">Not Paid</span>'}</td>
+			<td>${data.collegeName}</td>
+			<td><ul >
+				${(data.events && data.events.map((event)=>{
+					return `<li>${event}</li>`;
+				}).join('')) || 'Workshop'}
+				</ul></td>
+			<td>
+			
+			${(data.mailEvent && 'Yes') || (!data.mailEvent && '<span style="color:#dd0a37;">No</span>') }
+			</td>
+			</tr>`);
+		}
+
+		function modalHTML(data){
+			return(`
+				<div>
+					<h6>Arrival Date: </h6>
+					${data.arrivalDate || '-'}
+				</div>
+				<div>
+					<h6>Departure Date: </h6>
+					${data.departureDate || '-'}
+				</div>
+				<div>
+					<h6>Transport Details </h6><br>
+					${data.transport || '-'}<br>
+					${data.transportDetails || '-'}
+				</div>
+				<div>
+					<h6>Team Memebers: </h6>
+					${data.teamNumber || '-'}
+				</div>
+				<div>
+					<h6>Members Name: </h6>
+					${data.teamMembersName || '-'}
+				</div>
+			`);
+		}
+	</script>
+
+</body>
+
+</html>
+
+
