@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const hbs = require('hbs');
 
-mongoose.connect('mongodb://localhost:27017/Register',{
+mongoose.connect('mongodb+srv://srijan:srijan@cluster.7jtpo.mongodb.net/RegisterTest?retryWrites=true&w=majority',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
