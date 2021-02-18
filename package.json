@@ -16,8 +16,8 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "hbs": "^4.0.5",
-    "mongoose": "^5.7.3",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.11.17",
     "nodemon": "^1.19.2",
     "pdfkit": "^0.10.0",
     "validator": "^11.1.0"
