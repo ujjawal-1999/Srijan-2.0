@@ -372,7 +372,7 @@ textarea.input {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  
+
 }
 
 .home-content h1 {
@@ -418,7 +418,7 @@ textarea.input {
 
 
 
-/* 
+/*
 changes */
 
 
@@ -429,7 +429,7 @@ changes */
 
 .timer_section
 {
-	
+
 }
 .timer_overlay
 {
@@ -588,12 +588,13 @@ changes */
 
 .speaker .speaker-body {
   position: absolute;
-  bottom: 60px;
+  bottom: 0px;
   left: 0;
   right: 0;
 }
 
 .speaker .speaker-content {
+
   position: relative;
   padding: 30px;
   background: #dd0a37;
@@ -902,7 +903,7 @@ changes */
   color: white;
   margin-left:75vh;
   margin-bottom: 5vh;
-  
+
 }
 .next a:hover {
   background-color: #ddd;
@@ -1017,20 +1018,20 @@ changes */
 
 
 .box {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.box::-webkit-scrollbar { 
-  display: none;  
+.box::-webkit-scrollbar {
+  display: none;
 }
 
 textarea {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-textarea::-webkit-scrollbar { 
-  display: none;  
+textarea::-webkit-scrollbar {
+  display: none;
 }
 
 .box h2 {
