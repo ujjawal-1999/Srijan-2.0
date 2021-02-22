@@ -1,0 +1,35 @@
+#button {
+    display: inline-block;
+    background-color: #2266BD;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    content: "\f062";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5em;
+    line-height: 40px;
+    color: #fff;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: rgb(9, 62, 75);
+  }
+  #button:active {
+    background-color: rgb(134, 126, 126);
+  }
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+  }
