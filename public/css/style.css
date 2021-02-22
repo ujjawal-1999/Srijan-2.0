@@ -5,7 +5,7 @@ Author: yaminncco
 Colors:
 	Body 		  : #444
 	Headers 	: #0b0f28
-	Primary 	: #dd0a37
+	Primary 	: #2266bd
 	Dark 		  : #000
 	Grey 		  : #F9F9FA #DADADA
 
@@ -78,7 +78,7 @@ a {
 a:hover, a:focus {
   text-decoration: none;
   outline: none;
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 ul, ol {
@@ -95,7 +95,7 @@ ul, ol {
 .main-btn {
   display: inline-block;
   padding: 14px 50px;
-  background: #dd0a37;
+  background: #2266bd;
   color: #FFF;
   text-transform: uppercase;
   border: none;
@@ -125,7 +125,7 @@ textarea.input {
 }
 
 .input:focus {
-  border-color: #dd0a37;
+  border-color: #2266bd;
 }
 
 /*----------------------------*\
@@ -293,16 +293,16 @@ textarea.input {
   bottom: -3px;
   width: 100%;
   left: 0;
-  background: #dd0a37;
+  background: #2266bd;
 }
 
 .main-nav li a:hover, .main-nav li a:focus {
   background-color: transparent;
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 #header.transparent-navbar .main-nav li a:hover {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .navbar-toggle {
@@ -346,7 +346,7 @@ textarea.input {
     color: #0b0f28;
   }
   .main-nav li a:hover, .main-nav li a:focus, .main-nav li.active a {
-    background-color: #dd0a37;
+    background-color: #2266bd;
     color: #fff !important;
   }
   .navbar-toggle {
@@ -408,7 +408,7 @@ textarea.input {
 .number h3 {
   font-size: 42px;
   margin-bottom: 0px;
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .number p {
@@ -532,7 +532,7 @@ changes */
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   background: transparent;
-  color: #dd0a37;
+  color: #2266bd;
   width: 90px;
   height: 90px;
   line-height: 90px;
@@ -597,7 +597,7 @@ changes */
 
   position: relative;
   padding: 30px;
-  background: #dd0a37;
+  background: #2266bd;
   text-align: right;
   z-index: 20;
 }
@@ -629,7 +629,7 @@ changes */
   line-height: 40px;
   text-align: center;
   color: #FFF;
-  background: #dd0a37;
+  background: #2266bd;
   z-index: 15;
   -webkit-transition: 0.3s opacity;
   transition: 0.3s opacity;
@@ -676,7 +676,7 @@ changes */
   height: 60px;
   line-height: 60px;
   text-align: center;
-  background-color: #dd0a37 !important;
+  background-color: #2266bd !important;
   border-radius: 50%;
   padding: 0;
   color: #FFF;
@@ -704,7 +704,7 @@ changes */
 }
 
 .speaker-modal .speaker-modal-content .speaker-job {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .speaker-modal .speaker-modal-content .speaker-social {
@@ -720,7 +720,7 @@ changes */
   text-align: center;
   font-size: 14px;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   color: #fff;
   margin-right: 5px;
   -webkit-transition: 0.3s opacity;
@@ -746,7 +746,7 @@ changes */
 }
 
 .speaker-modal .speaker-modal-content .speaker-events .speaker-event>span strong {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 /*=========================================================
@@ -768,7 +768,7 @@ changes */
   top: 0px;
   bottom: 0px;
   width: 4px;
-  background-color: #dd0a37;
+  background-color: #2266bd;
 }
 
 .event:last-child:after {
@@ -782,7 +782,7 @@ changes */
   height: 60px;
   top: -60px;
   width: 4px;
-  background-color: #dd0a37;
+  background-color: #2266bd;
 }
 
 .event .event-day {
@@ -792,7 +792,7 @@ changes */
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   z-index: 10;
 }
 
@@ -803,7 +803,7 @@ changes */
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   z-index: 10;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -846,11 +846,11 @@ changes */
 }
 
 .event .event-time i {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .event .event-content a {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .download-btn {
@@ -892,7 +892,7 @@ changes */
 }
 
 .contact h3 {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .next{
@@ -939,7 +939,7 @@ changes */
   text-align: center;
   line-height: 120px;
   font-size: 42px;
-  color: #dd0a37;
+  color: #2266bd;
   cursor: pointer;
 }
 
@@ -985,7 +985,7 @@ changes */
   height: 30px;
   text-align: center;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   color: #fff;
   line-height: 30px;
   margin-right: 15px;
@@ -1116,7 +1116,7 @@ input:focus::placeholder{
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
+  background-color: #2266bd; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 11px; /* Some padding */
@@ -1205,7 +1205,7 @@ input:focus::placeholder{
   height: 60px;
   line-height: 60px;
   text-align: center;
-  background-color: #dd0a37 !important;
+  background-color: #2266bd !important;
   border-radius: 50%;
   padding: 0;
   color: #FFF;
@@ -1233,7 +1233,7 @@ input:focus::placeholder{
 }
 
 .speaker-modal .speaker-modal-content .speaker-job {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .speaker-modal .speaker-modal-content .speaker-social {
@@ -1249,7 +1249,7 @@ input:focus::placeholder{
   text-align: center;
   font-size: 14px;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   color: #fff;
   margin-right: 5px;
   -webkit-transition: 0.3s opacity;
@@ -1275,7 +1275,7 @@ input:focus::placeholder{
 }
 
 .speaker-modal .speaker-modal-content .speaker-events .speaker-event>span strong {
-  color: #dd0a37;
+  color: #2266bd;
 }
 }
 
