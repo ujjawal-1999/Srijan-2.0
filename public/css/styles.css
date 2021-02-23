@@ -54,7 +54,7 @@ section{
     margin-top: 3rem;
     margin-bottom: 5rem;
     text-align: center;
-    color: #5B2C6F;
+    color: #2266bd;
     position: relative;
 }
 
@@ -164,7 +164,7 @@ section{
     color:#3b5999;
 }
 .fa-instagram{
-    color:#e6683c;
+    color:#fb3958;
 }
 
 .fa-linkedin{
@@ -217,3 +217,9 @@ section{
     }
 }
 
+.hover{
+    color: #444;
+}
+.hover:hover{
+    color: #2266bd;
+}

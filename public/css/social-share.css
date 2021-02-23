@@ -45,6 +45,15 @@
     text-decoration: none;
     border-radius: 25px 0 0 25px;
 }
+.ct-socials li:nth-child(1) a:hover {
+  color : #3b5999;
+}
+.ct-socials li:nth-child(2) a:hover {
+  color : #2266bd;
+}
+.ct-socials li:nth-child(3) a:hover {
+  color : #fb3958;
+}
 .section.triad-section {
   margin-top: 10px;
 }
