@@ -1,6 +1,6 @@
 .ct-socials {
     position: fixed;
-    top: 25%;
+    top: 65%;
     right: 0;
     list-style: none;
     padding-left: 0;
@@ -29,19 +29,21 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    color: #dd0a37;
-    width: 44px;
-    height: 54px;
-    -webkit-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
+    color: #2266bd;
+    width: 54px;
+    height: 64px;
+    -webkit-transition: all 0.04s ease-in-out;
+    transition: all 0.09s ease-in-out;
     float: right;
     padding-left: 5px;
 }
 .ct-socials li a:hover {
-    width: 54px;
-    padding-left: 0;
-    text-decoration: none;
-    background: #3c9bd9;
+    width: 54px;
+    background-color: #e3edf5;
+    color: #0c0b0b;
+    margin-right: 15px;
+    text-decoration: none;
+    border-radius: 25px 0 0 25px;
 }
 .section.triad-section {
   margin-top: 10px;

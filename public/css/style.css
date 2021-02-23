@@ -5,7 +5,7 @@ Author: yaminncco
 Colors:
 	Body 		  : #444
 	Headers 	: #0b0f28
-	Primary 	: #dd0a37
+	Primary 	: #2266bd
 	Dark 		  : #000
 	Grey 		  : #F9F9FA #DADADA
 
@@ -78,7 +78,7 @@ a {
 a:hover, a:focus {
   text-decoration: none;
   outline: none;
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 ul, ol {
@@ -95,7 +95,7 @@ ul, ol {
 .main-btn {
   display: inline-block;
   padding: 14px 50px;
-  background: #dd0a37;
+  background: #2266bd;
   color: #FFF;
   text-transform: uppercase;
   border: none;
@@ -125,7 +125,7 @@ textarea.input {
 }
 
 .input:focus {
-  border-color: #dd0a37;
+  border-color: #2266bd;
 }
 
 /*----------------------------*\
@@ -293,16 +293,16 @@ textarea.input {
   bottom: -3px;
   width: 100%;
   left: 0;
-  background: #dd0a37;
+  background: #2266bd;
 }
 
 .main-nav li a:hover, .main-nav li a:focus {
   background-color: transparent;
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 #header.transparent-navbar .main-nav li a:hover {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .navbar-toggle {
@@ -346,7 +346,7 @@ textarea.input {
     color: #0b0f28;
   }
   .main-nav li a:hover, .main-nav li a:focus, .main-nav li.active a {
-    background-color: #dd0a37;
+    background-color: #2266bd;
     color: #fff !important;
   }
   .navbar-toggle {
@@ -372,7 +372,7 @@ textarea.input {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  
+
 }
 
 .home-content h1 {
@@ -408,7 +408,7 @@ textarea.input {
 .number h3 {
   font-size: 42px;
   margin-bottom: 0px;
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .number p {
@@ -418,7 +418,7 @@ textarea.input {
 
 
 
-/* 
+/*
 changes */
 
 
@@ -532,7 +532,7 @@ changes */
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   background: transparent;
-  color: #dd0a37;
+  color: #2266bd;
   width: 90px;
   height: 90px;
   line-height: 90px;
@@ -588,15 +588,16 @@ changes */
 
 .speaker .speaker-body {
   position: absolute;
-  bottom: 60px;
+  bottom: 0px;
   left: 0;
   right: 0;
 }
 
 .speaker .speaker-content {
+
   position: relative;
   padding: 30px;
-  background: #dd0a37;
+  background: #2266bd;
   text-align: right;
   z-index: 20;
 }
@@ -628,7 +629,7 @@ changes */
   line-height: 40px;
   text-align: center;
   color: #FFF;
-  background: #dd0a37;
+  background: #2266bd;
   z-index: 15;
   -webkit-transition: 0.3s opacity;
   transition: 0.3s opacity;
@@ -675,7 +676,7 @@ changes */
   height: 60px;
   line-height: 60px;
   text-align: center;
-  background-color: #dd0a37 !important;
+  background-color: #2266bd !important;
   border-radius: 50%;
   padding: 0;
   color: #FFF;
@@ -703,7 +704,7 @@ changes */
 }
 
 .speaker-modal .speaker-modal-content .speaker-job {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .speaker-modal .speaker-modal-content .speaker-social {
@@ -719,7 +720,7 @@ changes */
   text-align: center;
   font-size: 14px;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   color: #fff;
   margin-right: 5px;
   -webkit-transition: 0.3s opacity;
@@ -745,7 +746,7 @@ changes */
 }
 
 .speaker-modal .speaker-modal-content .speaker-events .speaker-event>span strong {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 /*=========================================================
@@ -767,7 +768,7 @@ changes */
   top: 0px;
   bottom: 0px;
   width: 4px;
-  background-color: #dd0a37;
+  background-color: #2266bd;
 }
 
 .event:last-child:after {
@@ -781,7 +782,7 @@ changes */
   height: 60px;
   top: -60px;
   width: 4px;
-  background-color: #dd0a37;
+  background-color: #2266bd;
 }
 
 .event .event-day {
@@ -791,7 +792,7 @@ changes */
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   z-index: 10;
 }
 
@@ -802,7 +803,7 @@ changes */
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   z-index: 10;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -845,11 +846,11 @@ changes */
 }
 
 .event .event-time i {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .event .event-content a {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .download-btn {
@@ -891,7 +892,7 @@ changes */
 }
 
 .contact h3 {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .next{
@@ -902,7 +903,7 @@ changes */
   color: white;
   margin-left:75vh;
   margin-bottom: 5vh;
-  
+
 }
 .next a:hover {
   background-color: #ddd;
@@ -938,7 +939,7 @@ changes */
   text-align: center;
   line-height: 120px;
   font-size: 42px;
-  color: #dd0a37;
+  color: #2266bd;
   cursor: pointer;
 }
 
@@ -984,7 +985,7 @@ changes */
   height: 30px;
   text-align: center;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   color: #fff;
   line-height: 30px;
   margin-right: 15px;
@@ -1017,20 +1018,20 @@ changes */
 
 
 .box {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.box::-webkit-scrollbar { 
-  display: none;  
+.box::-webkit-scrollbar {
+  display: none;
 }
 
 textarea {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-textarea::-webkit-scrollbar { 
-  display: none;  
+textarea::-webkit-scrollbar {
+  display: none;
 }
 
 .box h2 {
@@ -1115,7 +1116,7 @@ input:focus::placeholder{
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
+  background-color: #2266bd; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 11px; /* Some padding */
@@ -1204,7 +1205,7 @@ input:focus::placeholder{
   height: 60px;
   line-height: 60px;
   text-align: center;
-  background-color: #dd0a37 !important;
+  background-color: #2266bd !important;
   border-radius: 50%;
   padding: 0;
   color: #FFF;
@@ -1232,7 +1233,7 @@ input:focus::placeholder{
 }
 
 .speaker-modal .speaker-modal-content .speaker-job {
-  color: #dd0a37;
+  color: #2266bd;
 }
 
 .speaker-modal .speaker-modal-content .speaker-social {
@@ -1248,7 +1249,7 @@ input:focus::placeholder{
   text-align: center;
   font-size: 14px;
   border-radius: 50%;
-  background: #dd0a37;
+  background: #2266bd;
   color: #fff;
   margin-right: 5px;
   -webkit-transition: 0.3s opacity;
@@ -1274,7 +1275,7 @@ input:focus::placeholder{
 }
 
 .speaker-modal .speaker-modal-content .speaker-events .speaker-event>span strong {
-  color: #dd0a37;
+  color: #2266bd;
 }
 }
 
@@ -1298,4 +1299,40 @@ input:focus::placeholder{
       border-radius: 1.2vh;
       overflow-y:scroll;
   }
+}
+.email-modal{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+}
+#email{
+  font-family: inherit;
+  width: 60%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  
+}
+#email:focus {
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e,#38ef7d);
+  border-image-slice: 1;
+}
+.social-media-icons{
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+.social-media-icons li{
+  padding: 10px 0px !important;
+}
+.social-media-icons li a{
+  transform: scale(2) ;
 }
