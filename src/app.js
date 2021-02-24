@@ -11,6 +11,7 @@ mongoose.connect('mongodb+srv://srijan:srijan@cluster.7jtpo.mongodb.net/Register
 
 const router = require('./routers/router')
 const paytmRouter = require('./routers/paytmRouter')
+const notifyRouter = require('./routers/notify')
 
 const app = express() 
 app.use(express.json())
@@ -33,6 +34,7 @@ const port = process.env.PORT || 3000
 
 app.use('/register',router)
 app.use('/paytmPath',paytmRouter)
+app.use('/notify', notifyRouter)
 
 
 
