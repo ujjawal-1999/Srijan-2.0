@@ -1341,12 +1341,14 @@ input:focus::placeholder{
 
 .modal-newsletter {	
 	color: #999;
-	width: 100%;
+	width: 625px;
 	max-width: 90%;
 	font-size: 15px;
   position: relative;
   top: 45%;
-  transform: translateY(-50%) !important;
+  left: 48%;
+  margin-left: unset;
+  transform: translate(-50%, -50%) !important;
 }
 .modal-newsletter .modal-content {
 	padding: 30px;
