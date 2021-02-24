@@ -6,7 +6,7 @@ router.post("/", async (req, res) => {
   try {
     let user = new NotifyEmailSchema(req.body);
     await user.save();
-    res.send("Successful");
+    res.send("/");
   } catch (error) {
     console.log(error);
     res.send("Error");
