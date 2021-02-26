@@ -4,13 +4,24 @@ const NotifyEmailSchema = require("../models/notify");
 
 router.post("/", async (req, res) => {
   try {
-    let user = new NotifyEmailSchema(req.body);
+    let email = req.body.email;
+    let alreadyExistingEmail = await NotifyEmailSchema.findOne({
+      email,
+    });
+    if (alreadyExistingEmail) {
+      res.redirect("/");
+      return;
+    }
+    let user = new NotifyEmailSchema({
+      email,
+    });
+
     await user.save();
-    res.send("/");
+    res.redirect("/");
   } catch (error) {
     console.log(error);
-    res.send("Error");
+    res.redirect("/");
   }
 });
 
-module.exports = router
+module.exports = router;
