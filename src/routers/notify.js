@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
       return;
     }
     let user = new NotifyEmailSchema({
-      email,
+      email: email.toLowerCase(),
     });
 
     await user.save();
