@@ -1280,6 +1280,27 @@ input:focus::placeholder{
 }
 
 @media only screen and (max-width: 480px) {
+  .main-btn{
+    padding: 9px 48px;
+  }
+  .card-img-top{
+    width: 340px !important;
+    height: 340px !important;
+  }
+  .card.h-100{
+    width: 350px !important;
+    margin: 0px;
+    padding: 0px;
+  }
+  .col-lg-4.col-sm-6.mb-4{
+    width: 300px !important;
+    padding-left: 3.5vw;
+  }
+  html, body{
+    overflow-x: hidden !important;
+    margin: 0px;
+    padding: 0px;
+  }
   [class*='col-xs'] {
     width: 100%;
   }
