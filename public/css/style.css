@@ -1284,17 +1284,20 @@ input:focus::placeholder{
     padding: 9px 48px;
   }
   .card-img-top{
-    width: 340px !important;
-    height: 340px !important;
+    width: 92vw !important;
+    height: 92vw !important;
+    margin: auto;
   }
   .card.h-100{
-    width: 350px !important;
+    width: 100% !important;
     margin: 0px;
     padding: 0px;
+    align-content: center;
   }
   .col-lg-4.col-sm-6.mb-4{
-    width: 300px !important;
-    padding-left: 3.5vw;
+    width: 100% !important;
+    align-content: center;
+    /* padding-left: 3.5vw; */
   }
   html, body{
     overflow-x: hidden !important;
