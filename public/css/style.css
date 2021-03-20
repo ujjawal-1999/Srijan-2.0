@@ -1448,3 +1448,11 @@ input:focus::placeholder{
 	margin: 100px auto;
 	text-align: center;
 }
+.break-class{
+  display: none;
+}
+@media screen and (max-width:768px){
+  .break-class{
+    display: block;
+  }
+}
