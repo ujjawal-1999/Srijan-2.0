@@ -77,45 +77,57 @@
 	</style>
   </head>
   <body class="registration-form-body">
-    <div class="form-heading"><h1>Registration Form</h1></div>
-    <div class="container event-form">
-        <form class="event-registration">
-            <label>Name</label>
-            <input type="text" id="student-name" name="student-name">
-            <label>Email Id</label>
-            <input type="email" id="student-email" name="student-email">
-            <label>Phone number</label>
-            <input type="number" id="student-number" name="student-number">
-            
-            <label>College</label>
-            <label class="checkbox"><input type="checkbox" value="">NIT Silchar</label>
-            <label>Other</label>
-            <input type="text" name="college-name">
-
-            <label>Batch</label>
-            <select class="form-control" id="batch-year">
-                <option>1st Year</option>
-                <option>2nd Year</option>
-                <option>3rd Year</option>
-                <option>4th Year</option>
-              </select>
-
-            <label>Workshop</label>
-            <label class="checkbox"><input type="checkbox" value="">a</label>
-            <label class="checkbox"><input type="checkbox" value="">b</label>
-            <label class="checkbox"><input type="checkbox" value="">c</label>
-            <label class="checkbox"><input type="checkbox" value="">d</label>
-
-              <label>Do you want T-shirt?</label>
-              <label class="checkbox"><input type="checkbox" value="" checked>Yes</label>
-              <label>Size</label>
-              <select class="form-control">
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
-        </form>
-    </div>
+      <div class="registration-event">
+        <div class="form-heading"><h1>Registration Form</h1></div>
+        <div class="container event-form">
+            <form class="event-registration">
+                <label>Name</label>
+                <input type="text" id="student-name" name="student-name">
+                <label>Email Id</label>
+                <input type="email" id="student-email" name="student-email">
+                <label>Phone number</label>
+                <input type="number" id="student-number" name="student-number">
+                
+                <label>College</label>
+                <label class="checkbox"><input type="checkbox" value="">NIT Silchar</label>
+                <label>Other</label>
+                <input type="text" name="college-name">
+    
+                <label>Batch</label>
+                <select class="form-control" id="batch-year">
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+                    <option>4th Year</option>
+                  </select>
+    
+                  <label>Workshop</label>
+                <div class="workshops">
+                    <label class="checkbox"><input type="checkbox" value="">a</label>
+                    <label class="checkbox"><input type="checkbox" value="">b</label>
+                    <label class="checkbox"><input type="checkbox" value="">c</label>
+                    <label class="checkbox"><input type="checkbox" value="">d</label>
+                   
+                </div>
+                
+    
+                  <label>Do you want T-shirt?</label>
+                  <label class="checkbox"><input type="checkbox" value="" checked>Yes</label>
+                  <div class="size">
+                    <label>Size</label>
+                    <select class="form-control">
+                      <option>S</option>
+                      <option>M</option>
+                      <option>L</option>
+                      <option>XL</option>
+                    </select>
+                  </div>
+                  
+            </form>
+            <div class="amount">INR 100</div>
+            <button>Proceed</button>
+        </div>
+      </div>
+    
   </body>
 </html>
