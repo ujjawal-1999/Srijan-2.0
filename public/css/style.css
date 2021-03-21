@@ -1280,6 +1280,30 @@ input:focus::placeholder{
 }
 
 @media only screen and (max-width: 480px) {
+  .main-btn{
+    padding: 9px 48px;
+  }
+  .card-img-top{
+    width: 92vw !important;
+    height: 92vw !important;
+    margin: auto;
+  }
+  .card.h-100{
+    width: 100% !important;
+    margin: 0px;
+    padding: 0px;
+    align-content: center;
+  }
+  .col-lg-4.col-sm-6.mb-4{
+    width: 100% !important;
+    align-content: center;
+    /* padding-left: 3.5vw; */
+  }
+  html, body{
+    overflow-x: hidden !important;
+    margin: 0px;
+    padding: 0px;
+  }
   [class*='col-xs'] {
     width: 100%;
   }
@@ -1423,4 +1447,12 @@ input:focus::placeholder{
 .hint-text {
 	margin: 100px auto;
 	text-align: center;
+}
+.break-class{
+  display: none;
+}
+@media screen and (max-width:768px){
+  .break-class{
+    display: block;
+  }
 }
