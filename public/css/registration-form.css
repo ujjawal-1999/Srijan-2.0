@@ -1,0 +1,28 @@
+.event-registration{
+    display: flex;
+    flex-direction: column;
+}
+.registration-form-body{
+    background-image: url(../img/Desktop.png);
+    background-size: cover;
+    background-position: center;
+}
+.registration-form-body::before{
+    filter: blur(8px);
+}
+.form-heading{
+    width: 80%;
+    background-color: rgb(0,0,0,0.6);
+    margin: auto;
+    color: #fff;
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+}
+.event-form{
+    background-color: rgb(0,0,0,0.5);
+    width: 80%;
+    margin: auto;
+    padding: 2%;
+
+}
