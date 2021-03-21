@@ -8,7 +8,16 @@
     background-position: center;
 }
 .registration-form-body::before{
+    content: '';
     filter: blur(8px);
+}
+.registration-event{
+    height: 80vh;
+    overflow-y: scroll;
+    vertical-align: middle;
+    margin-top: 10vh;
+    width: 60vw;
+    margin-left: 20vw;
 }
 .form-heading{
     width: 80%;
@@ -24,5 +33,18 @@
     width: 80%;
     margin: auto;
     padding: 2%;
+}
+.checkbox{
+    padding-left: 2%;
+}
+input{
+background-color: unset;
+border: unset;
+border-bottom: 2px solid beige;
+margin-bottom: 8px;
+transform: translateY(-3px);
+}
 
+.workshops label{
+    margin-right: 15px;
 }
