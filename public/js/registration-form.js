@@ -3,17 +3,31 @@ const tsPrice = 350;
 
 var priceToBePaid = 0;
 
-var tsCheckbox = document.querySelector('#tsCheckbox');
-var wsCheckbox = document.querySelectorAll(".ws");
+const tsCheckbox = document.querySelector('#tsCheckbox');
+const wsCheckbox = document.querySelectorAll(".ws");
+const sizeSelect = document.querySelector('.size');
 
-var priceDisplay = document.querySelector('.amount');
+const priceDisplay = document.querySelector('.amount');
+
+function showSizeSelect(status){
+    if( status ){
+        sizeSelect.style.display = 'block';
+    }
+    if( !status ){
+        sizeSelect.style.display = 'none';
+    }
+}
 
 function changePrice(){
     if(this.id == 'tsCheckbox'){
-        if(this.checked)
-        priceToBePaid += tsPrice;
-        else
-        priceToBePaid -= tsPrice;
+        if(this.checked){
+            priceToBePaid += tsPrice;
+            showSizeSelect(1);
+        }
+        else{
+            priceToBePaid -= tsPrice;
+            showSizeSelect(0)
+        }
     }
     else{
         if(this.checked)
@@ -21,7 +35,7 @@ function changePrice(){
         else
         priceToBePaid -= wsPrice[ parseInt(this.id) - 1 ]
     }
-    priceDisplay.innerHTML =   `INR ${priceToBePaid}`;
+    priceDisplay.innerHTML =   `INR ${priceToBePaid}/-`;
 }
 
 changePrice.call(tsCheckbox);
