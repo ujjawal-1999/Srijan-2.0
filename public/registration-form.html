@@ -41,6 +41,8 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
@@ -77,58 +79,103 @@
 	</style>
   </head>
   <body class="registration-form-body">
+    <a href="index.html"> <img
+    class="logo-img"
+    src="img/E-CELL 1.png"
+    height="75px"
+    width="190px"
+    alt="logo"
+    style="padding-right: 1vh"
+  /></a>
       <div class="registration-event">
-        <div class="form-heading"><h1>Registration Form</h1></div>
         <div class="container event-form">
-            <form class="event-registration">
-                <label>Name</label>
-                <input type="text" id="student-name" name="student-name">
-                <label>Email Id</label>
-                <input type="email" id="student-email" name="student-email">
-                <label>Phone number</label>
-                <input type="number" id="student-number" name="student-number">
-                
-                <label>College Name</label>
-                <label class="checkbox"><input type="radio" name="college-name" value="NIT-Silchar">NIT Silchar</label>
-                <label class="checkbox"><input type="radio" name="college-name" value="Other-college">Other</label>
-                <label>If chosen Other college then mention its name:</label>
-                <input type="text" name="other-college-name">
-    
-                <label>Batch</label>
-                <select class="form-control" id="batch-year">
-                    <option>1st Year</option>
-                    <option>2nd Year</option>
-                    <option>3rd Year</option>
-                    <option>4th Year</option>
-                  </select>
-    
-                  <label>Workshop</label>
-                <div class="workshops">
-                    <label class="checkbox"><input class="ws" id="1" type="checkbox" value="">a</label>
-                    <label class="checkbox"><input class="ws" id="2" type="checkbox" value="">b</label>
-                    <label class="checkbox"><input class="ws" id="3" type="checkbox" value="">c</label>
-                    <label class="checkbox"><input class="ws" id="4" type="checkbox" value="">d</label>
-                   
-                </div>
-                
-    
-                  <label>Do you want T-shirt?</label>
-                  <label class="checkbox"><input id="tsCheckbox" type="checkbox" value="" checked>Yes</label>
-                  <div class="size">
-                    <label>Size</label>
-                    <select class="form-control">
-                      <option>S</option>
-                      <option>M</option>
-                      <option>L</option>
-                      <option>XL</option>
-                    </select>
+           
+          <form class="event-registration">
+
+              <section>
+                <div class="text">
+                  <div class="form-heading">
+                    <h1>Register Yourself</h1>
                   </div>
-                  
+                  <label>Name</label>
+                  <input type="text" id="student-name" name="student-name">
+                  <label>Email Id</label>
+                  <input type="email" id="student-email" name="student-email">
+                  <label>Phone number</label>
+                  <input type="number" id="student-number" name="student-number">
+                </div>
+              </section>
+
+              <section>
+                <div class="text">
+                  <div class="form-heading">
+                    <h1>College Details</h1>
+                  </div>
+                  <label>College Name</label>
+                  <label class="checkbox"><input type="radio" name="college-name" value="NIT-Silchar">NIT Silchar</label>
+                  <label class="checkbox"><input type="radio" name="college-name" value="Other-college">Other</label>
+                  <label>If chosen Other college then mention its name:</label>
+                  <input type="text" name="other-college-name">
+      
+                  <label>Batch</label>
+                  <select class="form-control" id="batch-year">
+                      <option>1st Year</option>
+                      <option>2nd Year</option>
+                      <option>3rd Year</option>
+                      <option>4th Year</option>
+                    </select>
+                </div>
+              </section>
+
+              <section>
+                <div class="text">
+                  <div class="form-heading">
+                    <h1>Workshop Details</h1>
+                  </div>
+                  <label>Workshop</label>
+                  <div class="workshops">
+                      <label class="checkbox"><input class="ws" id="1" type="checkbox" value="">a</label>
+                      <label class="checkbox"><input class="ws" id="2" type="checkbox" value="">b</label>
+                      <label class="checkbox"><input class="ws" id="3" type="checkbox" value="">c</label>
+                      <label class="checkbox"><input class="ws" id="4" type="checkbox" value="">d</label>
+                     
+                  </div>
+                    <label>Do you want T-shirt?</label>
+                    <label class="checkbox"><input id="tsCheckbox" type="checkbox" value="" checked>Yes</label>
+                    <div class="size">
+                      <label>Size</label>
+                      <select class="form-control">
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="amount"></div>
+              </section>
             </form>
-            <div class="amount"></div>
-            <button>Proceed</button>
+            
+            <section>
+              <div class="text">
+                <div class="form-heading">
+                  <h1>Confirm Submission?</h1>
+                </div>
+              <button id="proceed">Proceed</button>
+              </div>
+            </section>
+
+            
+
         </div>
+        
       </div>
+      <div class="nav-icons">
+        <button class="prev-btn"><i class='fas fa-angle-up' style='font-size:24px'></i>
+        </button>
+        <button class="next-btn"><i class='fas fa-angle-down' style='font-size:24px'></i>
+        </button>
+      </div> 
     <script src="js/registration-form.js"></script>
   </body>
 </html>
