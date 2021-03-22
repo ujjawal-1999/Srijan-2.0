@@ -88,10 +88,11 @@
                 <label>Phone number</label>
                 <input type="number" id="student-number" name="student-number">
                 
-                <label>College</label>
-                <label class="checkbox"><input type="checkbox" value="">NIT Silchar</label>
-                <label>Other</label>
-                <input type="text" name="college-name">
+                <label>College Name</label>
+                <label class="checkbox"><input type="radio" name="college-name" value="NIT-Silchar">NIT Silchar</label>
+                <label class="checkbox"><input type="radio" name="college-name" value="Other-college">Other</label>
+                <label>If chosen Other college then mention its name:</label>
+                <input type="text" name="other-college-name">
     
                 <label>Batch</label>
                 <select class="form-control" id="batch-year">
@@ -103,16 +104,16 @@
     
                   <label>Workshop</label>
                 <div class="workshops">
-                    <label class="checkbox"><input type="checkbox" value="">a</label>
-                    <label class="checkbox"><input type="checkbox" value="">b</label>
-                    <label class="checkbox"><input type="checkbox" value="">c</label>
-                    <label class="checkbox"><input type="checkbox" value="">d</label>
+                    <label class="checkbox"><input class="ws" id="1" type="checkbox" value="">a</label>
+                    <label class="checkbox"><input class="ws" id="2" type="checkbox" value="">b</label>
+                    <label class="checkbox"><input class="ws" id="3" type="checkbox" value="">c</label>
+                    <label class="checkbox"><input class="ws" id="4" type="checkbox" value="">d</label>
                    
                 </div>
                 
     
                   <label>Do you want T-shirt?</label>
-                  <label class="checkbox"><input type="checkbox" value="" checked>Yes</label>
+                  <label class="checkbox"><input id="tsCheckbox" type="checkbox" value="" checked>Yes</label>
                   <div class="size">
                     <label>Size</label>
                     <select class="form-control">
@@ -124,10 +125,10 @@
                   </div>
                   
             </form>
-            <div class="amount">INR 100</div>
+            <div class="amount"></div>
             <button>Proceed</button>
         </div>
       </div>
-    
+    <script src="js/registration-form.js"></script>
   </body>
 </html>
