@@ -1,6 +1,13 @@
 const wsPrice = [300, 300, 300, 300];
 const tsPrice = 350;
 
+// const wsPrice = {
+//   workshopX : 300,
+//   workshopY : 400,
+//   workShopZ : 500
+// }
+// price+=wsPrice[name]
+
 var priceToBePaid = 0;
 
 const tsCheckbox = document.querySelector('#tsCheckbox');

@@ -16,6 +16,7 @@ const router = require("./routers/router");
 const paytmRouter = require("./routers/paytmRouter");
 const notifyRouter = require("./routers/notify");
 const paymentRouter = require("./routers/razorpay");
+const registerRouter = require("./routers/register")
 
 const app = express();
 app.use(express.json());
@@ -40,11 +41,17 @@ app.use("/register", router);
 app.use("/paytmPath", paytmRouter);
 app.use("/notify", notifyRouter);
 app.use("/", paymentRouter);
+app.use('/', registerRouter)
+
 
 app.get("/payment", (req, res) => {
   let filePath = path.join(__dirname, "../public/payment.html");
   res.sendFile(filePath);
 });
+app.get('/register', (req, res)=>{
+  let filePath = path.join(__dirname, '../public/registration-form.html')
+  res.sendFile(filePath)
+})
 
 app.listen(port, () => {
   console.log("Server is up on port : " + port);
