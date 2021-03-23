@@ -1,4 +1,9 @@
-const wsPrice = [300, 300, 300, 300];
+const wsPrice = {
+  a: 300,
+  b: 300,
+  c: 300,
+  d: 300
+}
 const tsPrice = 350;
 
 var priceToBePaid = 0;
@@ -31,11 +36,11 @@ function changePrice(){
     }
     else{
         if(this.checked)
-        priceToBePaid += wsPrice[ parseInt(this.id) - 1 ]
+        priceToBePaid += wsPrice[ this.id ]
         else
-        priceToBePaid -= wsPrice[ parseInt(this.id) - 1 ]
+        priceToBePaid -= wsPrice[ this.id ]
     }
-    priceDisplay.innerHTML =   `Amount to be paid: INR ${priceToBePaid}/-`;
+    priceDisplay.value =   `${priceToBePaid}`;
 }
 
 changePrice.call(tsCheckbox);
