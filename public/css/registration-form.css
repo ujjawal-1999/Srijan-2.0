@@ -55,15 +55,23 @@ section{
     padding-left: 4%;
 }
 input{
-background-color: unset;
-border: unset;
-border-bottom: 2px solid beige;
-margin-bottom: 22px;
-transform: translateY(-3px);
+    background-color: unset;
+    border: unset;
+    /* border: 2px solid;
+    border-image: linear-gradient(to right, #1565D8 , white); */
+
+    border-bottom: 2px solid;
+    border-image: conic-gradient(white, #1565D8) 1;
+
+    margin-bottom: 22px;
+    /* transform: translateY(-3px); */
 }
 
 input:active, input:focus{
     outline: none !important;
+    border-image: unset;
+    /* border-bottom: 2px solid; */
+    /* border-image: conic-gradient(#1565D8) 1 !important; */
     border-bottom: 2px solid #1565D8 !important;
 }
 .workshops label{
@@ -84,7 +92,7 @@ input:active, input:focus{
     width: 70%;
     left: 15%;
     position: relative;
-    margin: 4%;
+    /* margin: 4%; */
     padding: 1.5%;
 
 }
@@ -128,6 +136,10 @@ label{
     }
 }
 @media screen and (max-width:768px){
+    .registration-event{
+        width: 65vw;
+        margin-left: 17.5vw;
+    }
     .checkbox{
         padding-left: 8%;
     }
@@ -137,8 +149,16 @@ label{
     .fas{
         font-size: 18px;
     }
+    .nav-icons{
+        margin-right: 22vw;
+        width: 8%;
+    }
 }
 @media screen and (max-width:400px){
+    .registration-event {
+        width: 80vw;
+        margin-left: 10vw;
+    }
     .checkbox{
         padding-left: 10%;
     }
@@ -149,12 +169,13 @@ label{
         font-size: 13px;
     }
     .nav-icons{
-        width: 6%;
+        width: 8%;
+        margin-right: 15vw;
+        top: 52%;
     }
 }
 
 img{
-    height: 10vh;
     margin-left: 6vh;
     margin-top: 1vh;
 }
