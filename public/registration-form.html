@@ -73,7 +73,7 @@
   <div class="registration-event">
     <div class="container event-form">
 
-      <form class="event-registration" action="/register" method="POST">
+      <form class="event-registration" action="/orders" method="POST">
 
         <section>
           <div class="text">
@@ -137,8 +137,10 @@
               </select>
             </div>
           </div>
-          <div>Amount to be paid: Rs<input style="font-weight: 100; width: 60px; " class="amount" type="number"
-              name="amount" disabled>/- </div>
+          <div>Amount to be paid: Rs
+            <input style="font-weight: 100; width: 60px;" class="amount" type="number"
+              name="amount" readonly />/- 
+            </div>
         </section>
         <section>
           <div class="text">

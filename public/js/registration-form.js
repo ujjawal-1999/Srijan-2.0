@@ -47,7 +47,7 @@ function changePrice(){
         else
         priceToBePaid -= wsPrice[ this.id ]
     }
-    priceDisplay.value =   parseInt(priceToBePaid);
+    priceDisplay.value = parseInt(priceToBePaid);
 }
 
 changePrice.call(tsCheckbox);

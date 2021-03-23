@@ -40,14 +40,9 @@ const port = process.env.PORT || 3000;
 app.use("/register", router);
 app.use("/paytmPath", paytmRouter);
 app.use("/notify", notifyRouter);
-app.use("/", paymentRouter);
+// app.use("/", paymentRouter);
 app.use('/', registerRouter)
 
-
-app.get("/payment", (req, res) => {
-  let filePath = path.join(__dirname, "../public/payment.html");
-  res.sendFile(filePath);
-});
 app.get('/register', (req, res)=>{
   let filePath = path.join(__dirname, '../public/registration-form.html')
   res.sendFile(filePath)
