@@ -102,7 +102,7 @@
             <p><span class="variable">Name</span><span class="value">   -   Riya</span></p>
             <p><span class="variable">Email Id</span><span class="value">   -   Riya@gmail.com</span></p>
             <p><span class="variable">Phone Number</span><span class="value">   -   1234567890</span></p>
-            <span class="variable">Workshops:</span><span class="value">
+            <p><span class="variable">Workshops:</span><span class="value"></p>
                 <ul style="list-style-type: circle;">
                     <li>A</li>
                     <li>B</li>
@@ -112,7 +112,8 @@
             <p><span class="variable">Total Amount Paid</span><span class="value">   -   350/-</span></p>
 
         </div>
-        <a href="index.html" onclick= printDiv() >Click Here to Download Receipt</a>
+       
+        <button id="print-receipt" class="proceed" onclick="printDiv()"> <a href="index.html">Click Here to Download Receipt</a></button>
 
         <div class="payment-failed" style="display: none;">
             <div class="status-icon">
@@ -122,8 +123,8 @@
                 <h1>Payment Unsuccessfull!</h1>
             </div>
             <p><span class="variable">Please Ty Again!!!</span></p>
-            <a href="registration-form.html">Click Here to go to the Registration Page</a>
-            
+            <button id="index-page" class="proceed"> <a href="registration-form.html">Click Here to go to the Registration Page</a></button>
+
         </div>
     </div>
     <script src="js/registration-form.js"></script>
