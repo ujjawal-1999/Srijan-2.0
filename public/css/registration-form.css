@@ -1,4 +1,7 @@
 /* Registration Section */
+*{
+    font-family: 'Poppins', sans-serif;
+}
 .event-registration{
     display: flex;
     flex-direction: column;
@@ -138,20 +141,23 @@ img{
         backdrop-filter: blur(8px);
         padding: 4% 4% 1%;
 }
+.verification-event, .payment-status p{
+    text-align: center;
+}
 .verification-event .form-heading h1{
     margin-bottom: 15px;
 }
 .variable{
-    font-weight: 800;
+    font-weight: 500;
     font-size: 24px;
 }
 .value{
-    font-weight: 550;
+    font-weight: 450;
     font-size: 18px;
 }
-ul{
+/* ul{
     padding-inline-start: 40px;
-}
+} */
 .confirm-section{
     display: flex;
     flex-direction: column;
@@ -199,7 +205,11 @@ ul{
     font-size: 70px;
 }
 .payment-status a{
-    color: #007AFF;
+    color: #fff;
+}
+ul{
+    text-align: center;
+    list-style-position: inside;
 }
 
 @media screen and (max-width:962px)
