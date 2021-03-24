@@ -1,3 +1,4 @@
+/* Registration Section */
 .event-registration{
     display: flex;
     flex-direction: column;
@@ -6,6 +7,8 @@
     background-image: url(../img/Desktop.png);
     background-size: cover;
     background-position: center;
+    /* -webkit-print-color-adjust: exact; */
+
 }
 .registration-event{
     position: relative;
@@ -17,7 +20,7 @@
     margin-left: 25vw;
     box-shadow: 0px 1px 52px -11px rgba(35, 60, 98, 0.34);
     border-radius: 20px;
-    backdrop-filter: blur(4.5px);
+    backdrop-filter: blur(8px);
 }
 section{
     height: 70vh;
@@ -41,7 +44,7 @@ section{
     font-style: normal;
     font-weight: 800;
     font-size: 33px;
-    line-height: 20px;
+    line-height: 30px;
     z-index: 2;
     color: #525252;
 }
@@ -57,21 +60,14 @@ section{
 input{
     background-color: unset;
     border: unset;
-    /* border: 2px solid;
-    border-image: linear-gradient(to right, #1565D8 , white); */
-
     border-bottom: 2px solid;
     border-image: conic-gradient(white, #1565D8) 1;
-
     margin-bottom: 22px;
-    /* transform: translateY(-3px); */
 }
 
 input:active, input:focus{
     outline: none !important;
     border-image: unset;
-    /* border-bottom: 2px solid; */
-    /* border-image: conic-gradient(#1565D8) 1 !important; */
     border-bottom: 2px solid #1565D8 !important;
 }
 .workshops label{
@@ -82,7 +78,7 @@ input:active, input:focus{
     font-weight: 800;
     font-size: large;
 }
-#proceed{
+.proceed{
     color: #fff;
     background-color: #1565D8;
     text-decoration: none !important;
@@ -92,22 +88,12 @@ input:active, input:focus{
     width: 70%;
     left: 15%;
     position: relative;
-    /* margin: 4%; */
     padding: 1.5%;
 
 }
 .nav-icons{
-    /* display: flex;
-    flex-direction: column;
-    position: fixed !important;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    margin-right: 22vw; */
-
     display: flex;
     flex-direction: column;
-    /* position: fixed !important; */
     position: absolute;
     top: 53%;
     width: 4%;
@@ -118,9 +104,9 @@ input:active, input:focus{
 .nav-icons button{
     margin-bottom: 30%;
     background: #FFFFFF;
-border: 1px solid #007AFF;
-box-sizing: border-box;
-box-shadow: 0px 0px 13px -5px #007AFF;
+    border: 1px solid #007AFF;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 13px -5px #007AFF;
 }
 .nav-icons button:active, .nav-icons button:focus{
     outline: none !important;
@@ -129,6 +115,93 @@ label{
     font-size: 22px;
     margin-top: 6px;
 }
+img{
+    margin-left: 6vh;
+    margin-top: 1vh;
+}
+
+/* Verification section */
+
+.verification-event{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 80vh;
+        position: relative;
+        overflow-y: hidden;
+        vertical-align: middle;
+        margin-top: 1vh;
+        width: 50vw;
+        margin-left: 25vw;
+        box-shadow: 0px 1px 52px -11px rgb(35 60 98 / 34%);
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        padding: 4% 4% 1%;
+}
+.verification-event .form-heading h1{
+    margin-bottom: 15px;
+}
+.variable{
+    font-weight: 800;
+    font-size: 24px;
+}
+.value{
+    font-weight: 550;
+    font-size: 18px;
+}
+ul{
+    padding-inline-start: 40px;
+}
+.confirm-section{
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    margin-bottom: 5%;
+    align-items: center;
+}
+
+/* Payment Section */
+
+.payment-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: hidden;
+    margin: auto;
+    top: 45%;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 50vw;
+    margin-left: 25vw;
+    margin-top: 5vh;
+    box-shadow: 0px 1px 52px -11px rgb(35 60 98 / 34%);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    padding: 3%;
+}
+/* .payment-sucessful{
+} */
+
+.success i{
+    color: green;
+}
+.success{
+    text-align: center;
+    align-items: center;
+    font-size: 70px;
+}
+.fail i{
+    color: red;
+}
+.fail{
+    text-align: center;
+    align-items: center;
+    font-size: 70px;
+}
+.payment-status a{
+    color: #007AFF;
+}
+
 @media screen and (max-width:962px)
 {
     label{
@@ -136,26 +209,37 @@ label{
     }
 }
 @media screen and (max-width:768px){
-    .registration-event{
+    /* .registration-event{
         width: 65vw;
         margin-left: 17.5vw;
+    } */
+    .registration-event,.verification-event, .payment-status {
+        width: 85vw;
+        margin-left: 7.5vw;
     }
     .checkbox{
         padding-left: 8%;
     }
     .form-heading h1{
         font-size: 25px;
+        margin-bottom: 20px;
     }
     .fas{
         font-size: 18px;
     }
+    .fa-check-circle{
+        font-size: 50px !important;
+    }
+    .fa-times-circle{
+        font-size: 50px !important;
+    }
     .nav-icons{
-        margin-right: 22vw;
+        margin-right: 11vw;
         width: 8%;
     }
 }
 @media screen and (max-width:400px){
-    .registration-event {
+    .registration-event,.verification-event, .payment-status{
         width: 80vw;
         margin-left: 10vw;
     }
@@ -173,9 +257,14 @@ label{
         margin-right: 15vw;
         top: 52%;
     }
+    .variable{
+        font-size: 20px;
+    }
+    .value{
+        font-size: 16px;
+    }
+    .form-heading h2{
+        font-size: 21px;
+    }
 }
 
-img{
-    margin-left: 6vh;
-    margin-top: 1vh;
-}
