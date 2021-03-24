@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const Registration = require("../models/registration");
-
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const Payment = require("../models/payment");
@@ -11,10 +10,10 @@ var instance = new Razorpay({
 });
 
 const defaultWorkshops = {
-  a: 300,
-  b: 300,
-  c: 300,
-  d: 300,
+  "Technical Workshop": 300,
+  "Skill Building Workshop": 300,
+  "Financial Assistance Workshop": 300,
+  "Entrepreneur Essentials": 300,
 };
 
 router.post("/orders", async (req, res) => {
@@ -41,10 +40,8 @@ router.post("/orders", async (req, res) => {
         finalAmount += defaultWorkshops[workshop];
       });
     }
-    if(tshirt)
-      finalAmount += 350;
-    if(parseInt(amount) != finalAmount)
-      amount = finalAmount;
+    if (tshirt) finalAmount += 350;
+    if (parseInt(amount) != finalAmount) amount = finalAmount;
     let applicantData = {
       name,
       email,
@@ -56,8 +53,8 @@ router.post("/orders", async (req, res) => {
       tshirt,
       tshirtSize,
     };
-    let registration = await new Registration(applicantData).save();
-    console.log(registration);
+    // let registration = await new Registration(applicantData).save();
+    // console.log(registration);
 
     // Payment Code
     let receiptNo = `${req.body.name}_${Date.now()}`;
@@ -83,10 +80,16 @@ router.post("/orders", async (req, res) => {
       data: data,
     }).save();
     console.log({ newPayment });
+
+    applicantData.paymentId = newPayment._id;
+
+    let registration = await new Registration(applicantData).save();
+    console.log(registration);
+
     //Create an object here to genereate popup params
     res.render("verifyDetails", {
       order,
-      newPayment : registration,
+      newPayment: registration,
       key_id: instance.key_id,
       key_secret: instance.key_secret,
     });
@@ -109,22 +112,68 @@ router.post("/verify", async (req, res) => {
       .digest("hex");
     let newStatus = "created";
     if (expectedSignature === signature) {
-        newStatus = "success";
+      newStatus = "success";
     } else {
-        newStatus = "Unauthenticated";
+      newStatus = "Unauthenticated";
     }
-    console.log({newStatus})
-    const newPay = await Payment.findOneAndUpdate({"data.orderId": orderId},{
-        "data.signature" : signature,
-        "data.paymentId" : paymentId,
-        "data.status" : newStatus
-    }, {new : true})
-    console.log({newPay});
-    res.render('paymentStatus')
+    console.log({ newStatus });
+    const newPay = await Payment.findOneAndUpdate(
+      { "data.orderId": orderId },
+      {
+        "data.signature": signature,
+        "data.paymentId": paymentId,
+        "data.status": newStatus,
+      },
+      { new: true }
+    );
+    console.log({ newPay });
+    // res.redirect(`/success/${registration._id}`);
+    res.end();
   } catch (error) {
     console.log(error);
-    res.send(error);
+    res.redirect("/failure");
   }
+});
+
+router.get("/success", async (req, res) => {
+  try {
+    let registrationId = req.query.registrationId;
+    console.log("Starting Success route");
+    console.log("Registration id: ", registrationId);
+    console.log("Registration id: ", typeof registrationId);
+
+    if (!registrationId) {
+      console.log("No registration id");
+      return res.redirect("/failure");
+    }
+
+    let registration = await Registration.findById(registrationId);
+    if (!registration) {
+      console.log("No registration with given id");
+      return res.redirect("/failure");
+    }
+
+    let paymentData = await Payment.findById(registration.paymentId);
+
+    if (!paymentData) {
+      console.log("No Payment data");
+      return res.render("/failure");
+    }
+    console.log("Final Data Reg: ", registration);
+    console.log("Final Data Pay: ", paymentData);
+
+    res.render("paymentSuccess", {
+      registration,
+      paymentData: paymentData.data,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/failure");
+  }
+});
+
+router.get("/failure", (req, res) => {
+  res.render("paymentFailure");
 });
 
 module.exports = router;

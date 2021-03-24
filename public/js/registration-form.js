@@ -1,17 +1,10 @@
 const wsPrice = {
-  a: 300,
-  b: 300,
-  c: 300,
-  d: 300
+  technical: 300,
+  skill_building: 300,
+  financial_assistance: 300,
+  entrepreneur_essentials: 300
 }
 const tsPrice = 350;
-
-// const wsPrice = {
-//   workshopX : 300,
-//   workshopY : 400,
-//   workShopZ : 500
-// }
-// price+=wsPrice[name]
 
 var priceToBePaid = 0;
 

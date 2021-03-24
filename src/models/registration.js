@@ -31,13 +31,9 @@ const registrationSchema = new Schema(
     amount: {
       type: Number,
     },
-    payment: {
+    paymentId: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: "PaymentSchema",
-    },
-    paymentStatus: {
-      type: Boolean,
-      default: false,
     },
   },
   {
