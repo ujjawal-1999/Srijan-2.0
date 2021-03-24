@@ -26,8 +26,12 @@ function showSizeSelect(status){
 function setPrice(){
   if(tsCheckbox.checked){
     priceToBePaid += tsPrice;
+    showSizeSelect(1);
   }
-  for(let i=0; i<wsCheckbox.length ; i++){
+  else{
+    showSizeSelect(0);
+  }
+  for(let i=0 ; i<wsCheckbox.length ; i++){
     let ws = wsCheckbox[i];
     if( ws.checked ){
       priceToBePaid += wsPrice[ ws.id ];
