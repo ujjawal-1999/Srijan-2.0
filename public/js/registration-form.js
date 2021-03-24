@@ -36,8 +36,6 @@ function setPrice(){
   priceDisplay.value = parseInt(priceToBePaid);
 }
 
-setPrice();
-
 function changePrice(){
     if(this.id == 'tsCheckbox'){
         if(this.checked){
