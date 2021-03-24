@@ -59,7 +59,7 @@ section{
 
 .checkbox{
     padding-left: 4%;
-    padding-bottom: 10px;
+    padding-bottom: 2px;
 }
 input{
     background-color: unset;
@@ -234,7 +234,6 @@ ul{
     }
     .checkbox{
         padding-left: 8%;
-        padding-bottom: 4px;
     }
     .form-heading h1{
         font-size: 25px;
@@ -261,7 +260,6 @@ ul{
     }
     .checkbox{
         padding-left: 10%;
-        padding-bottom: 1px;
     }
     .form-heading h1{
         font-size: 18px;

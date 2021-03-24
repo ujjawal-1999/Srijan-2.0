@@ -23,6 +23,21 @@ function showSizeSelect(status){
     }
 }
 
+function setPrice(){
+  if(tsCheckbox.checked){
+    priceToBePaid += tsPrice;
+  }
+  for(let i=0; i<wsCheckbox.length ; i++){
+    let ws = wsCheckbox[i];
+    if( ws.checked ){
+      priceToBePaid += wsPrice[ ws.id ];
+    }
+  }
+  priceDisplay.value = parseInt(priceToBePaid);
+}
+
+setPrice();
+
 function changePrice(){
     if(this.id == 'tsCheckbox'){
         if(this.checked){
@@ -43,11 +58,9 @@ function changePrice(){
     priceDisplay.value = parseInt(priceToBePaid);
 }
 
-changePrice.call(tsCheckbox);
 
 for(var i=0; i<wsCheckbox.length; i++){
     var ws = wsCheckbox[i];
-
     ws.addEventListener('click', changePrice );
 }
 
