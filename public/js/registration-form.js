@@ -131,3 +131,39 @@ document.addEventListener('wheel', event => {
 
 
 
+{/* <script type="text/javascript"> */}
+      function printDiv() {
+        var printContents = document.getElementById("print").innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+      }
+    // </script>
+
+
+
+
+{/* <div class="registration-event" id="hello">
+      <div class="container event-form">
+        <div>
+          <section>
+            <div class="text">
+              <div class="form-heading">
+                <h1>Register Yourself</h1>
+              </div>
+              <label>Name</label>
+              <input type="text" id="student-name" name="name" required />
+              <label>Email Id</label>
+              <input type="email" id="student-email" name="email" required />
+              <label>Phone number</label>
+              <input type="number" id="student-number" name="phone" required />
+              <button id="proceed" onclick="printDiv()">Proceed</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div> */}
