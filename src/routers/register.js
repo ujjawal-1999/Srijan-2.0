@@ -84,14 +84,46 @@ router.post("/orders", async (req, res) => {
     }).save();
     console.log({ newPayment });
     //Create an object here to genereate popup params
-    res.render("checkout", {
+    res.render("verifyDetails", {
       order,
+      newPayment : registration,
       key_id: instance.key_id,
       key_secret: instance.key_secret,
     });
   } catch (error) {
     console.log(error);
     res.send("Fail");
+  }
+});
+
+router.post("/verify", async (req, res) => {
+  try {
+    let orderId = req.body.razorpay_order_id;
+    let paymentId = req.body.razorpay_payment_id;
+    let signature = req.body.razorpay_signature;
+    let body = `${orderId}|${paymentId}`;
+
+    var expectedSignature = crypto
+      .createHmac("sha256", "eJA2LybH9bZ7GgKkvM1kXgsL")
+      .update(body.toString())
+      .digest("hex");
+    let newStatus = "created";
+    if (expectedSignature === signature) {
+        newStatus = "success";
+    } else {
+        newStatus = "Unauthenticated";
+    }
+    console.log({newStatus})
+    const newPay = await Payment.findOneAndUpdate({"data.orderId": orderId},{
+        "data.signature" : signature,
+        "data.paymentId" : paymentId,
+        "data.status" : newStatus
+    }, {new : true})
+    console.log({newPay});
+    res.render('paymentStatus')
+  } catch (error) {
+    console.log(error);
+    res.send(error);
   }
 });
 
