@@ -54,7 +54,7 @@ section{
     margin-top: 3rem;
     margin-bottom: 5rem;
     text-align: center;
-    color: #5B2C6F;
+    color: #2266bd;
     position: relative;
 }
 
@@ -107,14 +107,15 @@ section{
 }
 .card h1{
     font-size: 2.5rem;
-    color:#333;
+    color: #2266bd;
     margin:1.5rem 0;
 }
 
 .job-title{
-    color:#777;
+    color:#22869e;
     font-size: 1.5rem;
     font-weight: 300;
+    padding: 0 0 20px;
 }
 .about{
     font-size:1.5rem;
@@ -164,7 +165,7 @@ section{
     color:#3b5999;
 }
 .fa-instagram{
-    color:#e6683c;
+    color:#fb3958;
 }
 
 .fa-linkedin{
@@ -217,3 +218,9 @@ section{
     }
 }
 
+.hover{
+    color: #444;
+}
+.hover:hover{
+    color: #2266bd;
+}

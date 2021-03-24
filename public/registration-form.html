@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="National Entrepreneurship Summit organised by NIT Silchar" />
+  <meta name="keywords"
+    content="srijan nits,srijan esummit,srijan nit silchar,e-summit,e-summit nits, speakers, sirjan nit silchar" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>SRIJAN | NIT Silchar</title>
+
+  <meta property="og:title" content="Srijan Website" />
+  <meta property="og:type" content="event" />
+  <meta property="og:url" content="http://srijan-nits.com" />
+  <meta property="og:site_name" content="National Institute of Technology Silchar" />
+  <meta property="og:description" content="SRiJAN E-Summit Event Organised by NIT Silchar" />
+
+  <link rel="icon" href="docsupport/bulb6-slow.gif" type="image/gif" sizes="16x16" />
+  <link rel="canonical" href="http://srijan-nits.com" />
+  <!-- Google font -->
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+
+  <!-- Bootstrap -->
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <!-- Owl Carousel -->
+  <link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
+  <link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+
+  <!-- Font Awesome Icon -->
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+  <!-- Custom stlylesheet -->
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <link type="text/css" rel="stylesheet" href="css/registration-form.css" />
+  <link type="text/css" rel="stylesheet" href="css/loader.css" />
+
+  <link type="text/css" rel="stylesheet" href="css/social-share.css" />
+  <link type="text/css" rel="stylesheet" href="css/scrollTop.css" />
+  <style>
+    .mobile-space,
+    .mobile-space1 {
+      width: 190px;
+      height: 500px;
+    }
+
+    .mobile-space1 {
+      width: 380px;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .mobile-space,
+      .mobile-space1 {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="registration-form-body">
+  <a href="index.html"> <img class="logo-img" src="img/E-CELL 1.png" height="75px" width="190px" alt="logo"
+      style="padding-right: 1vh" /></a>
+  <div class="registration-event">
+    <div class="container event-form">
+
+      <form class="event-registration" action="/orders" method="POST">
+
+        <section>
+          <div class="text">
+            <div class="form-heading">
+              <h1>Register Yourself</h1>
+            </div>
+            <label>Name</label>
+            <input type="text" id="student-name" name="name" required>
+            <label>Email Id</label>
+            <input type="email" id="student-email" name="email" required>
+            <label>Phone number</label>
+            <input type="number" id="student-number" name="phone" required>
+          </div>
+        </section>
+
+        <section>
+          <div class="text">
+            <div class="form-heading">
+              <h1>College Details</h1>
+            </div>
+            <label>College Name</label>
+            <input type="text" name="college" value="NIT Silchar" required />
+            <!-- <label class="checkbox"><input type="radio" name="college" value="NIT-Silchar">NIT Silchar</label>
+                <label class="checkbox"><input type="radio" value="Other-college">Other</label>
+                <label>If chosen Other college then mention its name:</label>
+                <input type="text" name="college"> -->
+
+            <label>Graduation Year</label>
+            <select class="form-control" name="graduationYear" id="batch-year" required>
+              <option>2021</option>
+              <option>2022</option>
+              <option>2023</option>
+              <option>2024</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </section>
+        <section>
+          <div class="text">
+            <div class="form-heading">
+              <h1>Workshop Details</h1>
+            </div>
+            <label>Workshop</label>
+            <div class="workshops">
+              <label class="checkbox"><input class="ws" id="technical" name="workshops" type="checkbox"
+                  value="Technical Workshop">Technical Workshop</label>
+              <label class="checkbox"><input class="ws" id="skill_building" name="workshops" type="checkbox"
+                  value="Skill Building Workshop">Skill Building Workshop</label>
+              <label class="checkbox"><input class="ws" id="financial_assistance" name="workshops" type="checkbox"
+                  value="Financial Assistance Workshop">Financial Assistance Workshop</label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                  value="Entrepreneur Essentials">Entrepreneur Essentials</label>
+            </div>
+            <label>Do you want T-shirt?</label>
+            <label class="checkbox"><input id="tsCheckbox" type="checkbox" name="tshirt" value="Yes" checked>Yes</label>
+            <div class="size">
+              <label>Size</label>
+              <select name="tshirtSize" class="form-control">
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+              </select>
+            </div>
+          </div>
+          <div>Amount to be paid: Rs
+            <input style="font-weight: 100; width: 60px;" class="amount" type="number" name="amount" readonly />/-
+          </div>
+        </section>
+        <section>
+          <div class="text">
+            <div class="form-heading">
+              <h1>Confirm Submission?</h1>
+            </div>
+            <button id="proceed" class="proceed">Proceed</button>
+          </div>
+        </section>
+      </form>
+    </div>
+
+  </div>
+  <div class="nav-icons">
+    <button class="prev-btn"><i class='fas fa-angle-up'></i>
+    </button>
+    <button class="next-btn"><i class='fas fa-angle-down'></i>
+    </button>
+  </div>
+  <script src="js/registration-form.js"></script>
+</body>
+
+</html>
