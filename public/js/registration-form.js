@@ -6,6 +6,13 @@ const wsPrice = {
 }
 const tsPrice = 350;
 
+// const wsPrice = {
+//   workshopX : 300,
+//   workshopY : 400,
+//   workShopZ : 500
+// }
+// price+=wsPrice[name]
+
 var priceToBePaid = 0;
 
 const tsCheckbox = document.querySelector('#tsCheckbox');
@@ -40,7 +47,7 @@ function changePrice(){
         else
         priceToBePaid -= wsPrice[ this.id ]
     }
-    priceDisplay.value =   `${priceToBePaid}`;
+    priceDisplay.value = parseInt(priceToBePaid);
 }
 
 changePrice.call(tsCheckbox);
