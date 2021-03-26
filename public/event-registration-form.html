@@ -56,6 +56,12 @@
     .mobile-space1 {
       width: 380px;
     }
+    .wsLabel{
+        margin: 0 0 1px
+    }
+    .text{
+        height: 99%;
+    }
 
     @media screen and (max-width: 768px) {
 
@@ -69,7 +75,7 @@
   </style>
 </head>
 
-<body class="registration-form-body" onload="setPrice()">
+<body class="registration-form-body">
   <a href="index.html"> <img class="logo-img" src="img/E-CELL 1.png" height="75px" width="190px" alt="logo"
       style="padding-right: 1vh" /></a>
   <div class="registration-event">
@@ -80,28 +86,59 @@
         <section>
           <div class="text">
             <div class="form-heading">
-              <h1>Register Yourself</h1>
+              <h1>Register Your Team</h1>
             </div>
-            <label>Name</label>
-            <input type="text" id="student-name" name="name" required>
-            <label>Email Id</label>
-            <input type="email" id="student-email" name="email" required>
-            <label>Phone number</label>
-            <input type="number" id="student-number" name="phone" required>
+            <label>Team Name</label>
+            <input type="text" id="student-name" name="teamName" required>
+            <label>Team Leader Name</label>
+            <input type="text" id="student-name" name="leaderName" required>
+            <label>Team Leader Email</label>
+            <input type="email" id="student-email" name="leaderEmail" required>
+            <label>Team Leader Phone number</label>
+            <input type="number" id="student-number" name="leaderPhone" required>
           </div>
         </section>
 
         <section>
+            <div class="text">
+              <div class="form-heading">
+                <h1>Team Members Name</h1>
+                <h3>(Including Team Leader)</h3>
+              </div>
+              <label>Team Member 1</label>
+              <input type="text" id="student-name" name="member1" required>
+              <label>Team Member 2</label>
+              <input type="text" id="student-name" name="member2" required>
+              <label>Team Member 3</label>
+              <input type="email" id="student-email" name="member3" required>
+              <label>Team Member 4</label>
+              <input type="number" id="student-number" name="member4" required>
+            </div>
+          </section>
+
+          <section>
+            <div class="text">
+              <div class="form-heading">
+                <h1>Adress of Team Leader</h1>
+                <h3>(needed for sending rewards and goodies!)</h3>
+              </div>
+              <label>Permanent Address</label>
+              <textarea name="address" id=""></textarea>
+            </div>
+          </section>
+          
+        <!-- <section>
           <div class="text">
             <div class="form-heading">
               <h1>College Details</h1>
+              <h3>(needed for sending goodies!)</h3>
             </div>
             <label>College Name</label>
             <input type="text" name="college" value="NIT Silchar" required />
-            <!-- <label class="checkbox"><input type="radio" name="college" value="NIT-Silchar">NIT Silchar</label>
+            <label class="checkbox"><input type="radio" name="college" value="NIT-Silchar">NIT Silchar</label>
                 <label class="checkbox"><input type="radio" value="Other-college">Other</label>
                 <label>If chosen Other college then mention its name:</label>
-                <input type="text" name="college"> -->
+                <input type="text" name="college">
 
             <label>Graduation Year</label>
             <select class="form-control" name="graduationYear" id="batch-year" required>
@@ -112,24 +149,38 @@
               <option>Other</option>
             </select>
           </div>
-        </section>
+        </section> -->
         <section>
           <div class="text">
             <div class="form-heading">
-              <h1>Workshop Details</h1>
-              <h3>(Only The stock Market workshop is charged!)</h3>
-              <h3>One can participate in maximum 2 workshops</h3>
-
+              <h1>Event Details</h1>
             </div>
-            <!-- <label>Workshop</label> -->
+            <label>Events</label>
             <div class="workshops">
-              <label class="checkbox"><input class="ws" id="stock_market" name="workshops" type="checkbox"
-                  value="Technical Workshop" onclick="return maxLimitCheck()"> <p class="wsLabel" >Stock market Workshop</p> </label>
-              <label class="checkbox"><input class="ws" id="cyber_security" name="workshops" type="checkbox"
-                  value="Financial Assistance Workshop" onclick="return maxLimitCheck()"><p class="wsLabel">Digital Marketing</p></label>
-              <label class="checkbox"><input class="ws" id="cyber_security" name="workshops" type="checkbox"
-                value="Financial Assistance Workshop" onclick="return maxLimitCheck()"><p class="wsLabel">Cyber Security</p></label>
-            </div>
+                  <label class="checkbox"><input class="ws" id="technical" name="workshops" type="checkbox"
+                    value="Technical Workshop"> <p class="wsLabel" >Outwit the Board Room</p> </label>
+                  <label class="checkbox"><input class="ws" id="skill_building" name="workshops" type="checkbox"
+                    value="Skill Building Workshop"><p class="wsLabel">Panel Discussion</p></label>
+                  <label class="checkbox"><input class="ws" id="financial_assistance" name="workshops" type="checkbox"
+                    value="Financial Assistance Workshop"><p class="wsLabel">Pitch Please</p></label>
+                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                    value="Entrepreneur Essentials"><p class="wsLabel">IPL Auction</p></label>
+                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                    value="Entrepreneur Essentials"><p class="wsLabel">Bid & Get Started</p></label>
+                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                      value="Entrepreneur Essentials"><p class="wsLabel">Business Quiz</p></label>
+                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                      value="Entrepreneur Essentials"><p class="wsLabel">RESUME your business</p></label>
+                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                      value="Entrepreneur Essentials"><p class="wsLabel">TechNerds</p></label>
+                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                      value="Entrepreneur Essentials"><p class="wsLabel">Stock Market Investing</p></label>
+                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                      value="Entrepreneur Essentials"><p class="wsLabel">Intern Fair</p></label>
+                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="workshops" type="checkbox"
+                      value="Entrepreneur Essentials"><p class="wsLabel">Speaker Sessions</p></label>
+            
+                </div>
             <!-- <label>Do you want T-shirt?</label>
             <label class="checkbox"><input id="tsCheckbox" type="checkbox" name="tshirt" value="Yes" checked>Yes</label>
             <div class="size">
@@ -144,13 +195,17 @@
               </select>
             </div> -->
           </div>
-          <div>Amount to be paid: Rs
-            <input style="font-weight: 100; width: 60px;" class="amount" type="number" name="amount" readonly />/-
-          </div>
+          
         </section>
         <section>
           <div class="text">
-            <div class="form-heading">
+            <!-- <div>Amount to be paid: Rs
+                <input style="font-weight: 100; width: 60px;" class="amount" type="number" name="amount" readonly />200/-
+              </div> -->
+              <div class="form-heading">
+                <h3>Amount to be paid - 200/-</h3>
+              </div>
+              <div class="form-heading">
               <h1>Confirm Submission?</h1>
             </div>
             <button id="proceed" class="proceed">Proceed</button>
@@ -166,7 +221,7 @@
     <button class="next-btn"><i class='fas fa-angle-down'></i>
     </button>
   </div>
-  <script src="js/registration-form.js"></script>
+  <script src="js/event-registration-form.js"></script>
 </body>
 
 </html>

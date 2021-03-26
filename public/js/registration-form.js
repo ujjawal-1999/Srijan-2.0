@@ -1,10 +1,9 @@
 const wsPrice = {
-  technical: 300,
-  skill_building: 300,
-  financial_assistance: 300,
-  entrepreneur_essentials: 300
+  stock_market: 100,
+  digital_marketing: 0,
+  cyber_security: 0,
 }
-const tsPrice = 350;
+// const tsPrice = 350;
 
 var priceToBePaid = 0;
 
@@ -24,13 +23,13 @@ function showSizeSelect(status){
 }
 
 function setPrice(){
-  if(tsCheckbox.checked){
-    priceToBePaid += tsPrice;
-    showSizeSelect(1);
-  }
-  else{
-    showSizeSelect(0);
-  }
+  // if(tsCheckbox.checked){
+  //   priceToBePaid += tsPrice;
+  //   showSizeSelect(1);
+  // }
+  // else{
+  //   showSizeSelect(0);
+  // }
   for(let i=0 ; i<wsCheckbox.length ; i++){
     let ws = wsCheckbox[i];
     if( ws.checked ){
@@ -66,7 +65,37 @@ for(var i=0; i<wsCheckbox.length; i++){
     ws.addEventListener('click', changePrice );
 }
 
-tsCheckbox.addEventListener('click', changePrice );
+// tsCheckbox.addEventListener('click', changePrice );
+// var limit = 2;
+// for(var i=0; i<wsCheckbox.length; i++){
+//   var ws = wsCheckbox[i];
+//   ws.addEventListener('change', function(evt){
+    
+//   if(ws[i].siblings(':checked').length >= limit) {
+//       this.checked = false;
+//   }
+//   } );
+// }
+
+// for(var i=0; i<wsCheckbox.length; i++){
+//   var ws = wsCheckbox[i];
+  
+//   ws.addEventListener('change', maxLimitCheck);
+// }
+
+function maxLimitCheck(){
+  var k = 0;
+  console.log(k)
+  for(var i=0; i<wsCheckbox.length; i++){
+    if(wsCheckbox[i].checked === true ){
+      k++;
+    }
+  }
+  if(k>2){
+    return false
+  }
+  console.log(k)
+}
 
 
 
