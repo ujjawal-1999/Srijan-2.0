@@ -37,10 +37,6 @@ const port = process.env.PORT || 3000;
 app.use("/notify", notifyRouter);
 app.use('/', registerRouter)
 
-app.get('/register', (req, res)=>{
-  let filePath = path.join(__dirname, '../public/registration-form.html')
-  res.sendFile(filePath)
-})
 
 app.listen(port, () => {
   console.log("Server is up on port : " + port);

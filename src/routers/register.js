@@ -3,8 +3,8 @@ const Registration = require("../models/registration");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const Payment = require("../models/payment");
+const path = require('path')
 require("dotenv").config();
-
 
 var instance = new Razorpay({
   key_id: process.env.KEY_ID,
@@ -176,6 +176,24 @@ router.get("/success", async (req, res) => {
 
 router.get("/failure", (req, res) => {
   res.render("paymentFailure");
+});
+
+// Get routes for regstration pages
+
+router.get("/event-register", (req, res) => {
+  let eventRegistrationForm = path.join(
+    __dirname,
+    "../../public/event-registration-form.html"
+  );
+  res.sendFile(eventRegistrationForm);
+});
+
+router.get("/workshop-register", (req, res) => {
+  let workshopRegistrationForm = path.join(
+    __dirname,
+    "../../public/registration-form.html"
+  );
+  res.sendFile(workshopRegistrationForm);
 });
 
 module.exports = router;
