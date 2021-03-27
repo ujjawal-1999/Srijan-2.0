@@ -125,10 +125,6 @@
         "email": document.getElementById('EMAIL').innerText,
         "contact" : document.getElementById("PHONE").innerText,
       },
-      "modal":{
-        "confirm_close" : true,
-        "ondismiss" : ondismissEvent()
-      }
       "handler": function (response) {
         let bodyFormData = {
           razorpay_payment_id: response.razorpay_payment_id,

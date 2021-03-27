@@ -158,7 +158,7 @@ img{
         /* display: flex; */
         flex-direction: column;
         justify-content: space-around;
-        height: 80vh;
+        max-height: 80vh;
         position: relative;
         overflow-y: scroll;
         vertical-align: middle;

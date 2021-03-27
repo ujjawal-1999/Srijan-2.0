@@ -149,7 +149,7 @@ router.get("/success", async (req, res) => {
       return res.redirect("/failure");
     }
 
-    let registration = await Registration.findById(registrationId);
+    let registration = await WorkshopRegistration.findById(registrationId);
     if (!registration) {
       console.log("No registration with given id");
       return res.redirect("/failure");
