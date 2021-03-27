@@ -3,7 +3,7 @@ const Registration = require("../models/registration");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const Payment = require("../models/payment");
-require("dotenv").configure();
+require("dotenv").config();
 
 
 var instance = new Razorpay({

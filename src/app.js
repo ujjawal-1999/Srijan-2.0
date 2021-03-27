@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-require("dotenv").configure();
+require("dotenv").config();
 
 mongoose.connect(
   process.env.MONGODB_URL,
