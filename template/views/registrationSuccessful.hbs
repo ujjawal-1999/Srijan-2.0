@@ -14,12 +14,12 @@
 
   <meta property="og:title" content="Srijan Website" />
   <meta property="og:type" content="event" />
-  <meta property="og:url" content="http://srijan-nits.in" />
+  <meta property="og:url" content="http://srijan-nits.com" />
   <meta property="og:site_name" content="National Institute of Technology Silchar" />
   <meta property="og:description" content="SRiJAN E-Summit Event Organised by NIT Silchar" />
 
   <link rel="icon" href="docsupport/bulb6-slow.gif" type="image/gif" sizes="16x16" />
-  <link rel="canonical" href="http://srijan-nits.in" />
+  <link rel="canonical" href="http://srijan-nits.com" />
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet" />
 
@@ -77,25 +77,35 @@
         <div class="success"><i class="fas fa-check-circle"></i></div>
       </div>
       <div class="form-heading">
-        <h1>Payment Successful!</h1>
+        <h1>Event Registration Successful!</h1>
       </div>
-      <p><span class="variable">Receipt Number</span><span class="value"> - {{paymentData.receipt}}</span></p>
-      <p><span class="variable">Order Id</span><span class="value"> - {{paymentData.orderId}}</span></p>
-      <p><span class="variable">Payment Id</span><span class="value"> - {{paymentData.paymentId}}</span></p>
-      <p><span class="variable">Name</span><span class="value"> - {{registration.name}}</span></p>
-      <p><span class="variable">Email Id</span><span class="value"> - {{registration.email}}</span></p>
-      <p><span class="variable">Phone Number</span><span class="value"> - {{registration.phone}}</span></p>
-      <span class="variable">Workshops</span><span class="value">
-        <ul style="list-style-type: circle;">
-          {{#each registration.workshops}}
-          <li>{{this}}</li>
-          {{/each}}
-        </ul>
+      <!-- <p><span class="variable">Reference No</span><span class="value">   -   12345678</span></p>
+            <p><span class="variable">Order Id</span><span class="value">   -   RFABC12345</span></p>
+            <p><span class="variable">Receipt Number</span><span class="value">   -   0123456789</span></p> -->
+      <p><span class="variable">Team Name - </span><span class="value">{{data.teamName}}</span></p>
+      <p><span class="variable">Team Leader Name - </span><span class="value">{{data.leaderName}}</span></p>
+      <p><span class="variable">Team Leader Email Id - </span><span class="value"> {{data.leaderEmail}}</span></p>
+      <p><span class="variable">Team Leader Phone Number - </span><span class="value">{{data.leaderphone}}</span></p>
+      <p><span class="variable">Team Members : - </span><span class="value"></p>
+      <ul style="list-style-type: circle;">
+        {{#each data.teamMembers}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
       </span>
-      <p><span class="variable">Total Amount Paid</span><span class="value"> - {{registration.amount}}/-</span></p>
+      <p><span class="variable">Events: - </span><span class="value"></p>
+      <ul style="list-style-type: circle;">
+        {{#each data.events}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      </span>
+      <button id="print-receipt" class="proceed" onclick="printDiv()"> <a class="onHoverfocus" href="index.html">Click Here to
+          Print</a></button>
 
     </div>
-       <button id="print-receipt" class="proceed" onclick="printDiv()"><a class="onHoverfocus" href="index.html">Click Here to Download Receipt</a></button>
+
+
 
   </div>
   <script src="js/registration-form.js"></script>

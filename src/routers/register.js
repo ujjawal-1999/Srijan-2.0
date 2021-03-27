@@ -26,19 +26,17 @@ router.post("/orders", async (req, res) => {
       graduationYear,
       workshops,
       amount,
-
     } = req.body;
 
     if (typeof workshops === "string") workshops = [workshops];
-    workshops = workshops.filter((workshop)=>{
-      return workshop !== ''
-    })
-    
-    if(workshops.length > 2)
-      return res.redirect('/workshop-register');
+    workshops = workshops.filter((workshop) => {
+      return workshop !== "";
+    });
+
+    if (workshops.length > 2) return res.redirect("/workshop-register");
     let finalAmount = 0;
-    if (workshops && workshops.includes('Stock Market')) {
-        finalAmount = 100;
+    if (workshops && workshops.includes("Stock Market")) {
+      finalAmount = 100;
     }
     if (parseInt(amount) != finalAmount) amount = finalAmount;
     let applicantData = {
@@ -50,10 +48,10 @@ router.post("/orders", async (req, res) => {
       workshops,
       amount,
     };
-    if(amount == 0){
+    if (amount == 0) {
       let registration = await new WorkshopRegistration(applicantData).save();
       // return res.render('success');
-      return res.send('Success');
+      return res.send("Success");
     }
     // let registration = await new Registration(applicantData).save();
     // console.log(registration);
@@ -159,7 +157,7 @@ router.get("/success", async (req, res) => {
 
     if (!paymentData) {
       console.log("No Payment data");
-      return res.render("/failure");
+      return res.redirect("/failure");
     }
     console.log("Final Data Reg: ", registration);
     console.log("Final Data Pay: ", paymentData);
@@ -229,12 +227,12 @@ router.post("/event-register", async (req, res) => {
       leaderAddress,
       events,
     }).save();
-    if (!newEvent) return res.send("Registration Failed");
+    if (!newEvent) return res.render("registrationFailed");
     console.log(newEvent);
-    res.redirect("/");
+    res.render("registrationSuccessful", { data: newEvent });
   } catch (err) {
     console.log(err);
-    return res.send("Something went wrong! Try Again");
+    return res.render("registrationFailed");
   }
 });
 

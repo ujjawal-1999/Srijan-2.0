@@ -328,3 +328,10 @@ ul{
     }
 }
 
+.onHoverfocus{
+    background: inherit;
+}
+
+.onHoverfocus:hover{
+    background: inherit;
+}
