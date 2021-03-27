@@ -76,7 +76,7 @@
     </div>
     <p><span class="variable">Name - </span><span id="NAME" class="value"> {{newPayment.name}}</span></p>
     <p><span class="variable">Email - </span><span id="EMAIL" class="value">{{newPayment.email}}</span></p>
-    <p><span class="variable">Phone Number - </span><span id="PHONE"  class="value"> {{newPayment.phone}}</span></p>
+    <p><span class="variable">Phone Number - </span><span id="PHONE" class="value"> {{newPayment.phone}}</span></p>
     <p><span class="variable">College Name - </span><span class="value">{{newPayment.college}}</span></p>
     <p><span class="variable">Passing Year - </span><span class="value">{{newPayment.graduationYear}}</span></p>
     <span class="variable">Workshops</span><span class="value">
@@ -109,8 +109,8 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
-    const ondismissEvent = ()=>{
-       window.location = `${window.location.origin}/failure` 
+    const ondismissEvent = () => {
+      window.location = `${window.location.origin}/failure`
     }
     let options = {
       "key": document.getElementById('KEY').innerText,  //Enter your razorpay key
@@ -120,40 +120,65 @@
       "description": "Stock Market Workshop Payment",
       "image": "/img/favicon/bulb32px.jpg",
       "order_id": document.getElementById('ORDERID').innerText,
-      "prefill":{
-        "name" : document.getElementById('NAME').innerText,
+      "prefill": {
+        "name": document.getElementById('NAME').innerText,
         "email": document.getElementById('EMAIL').innerText,
-        "contact" : document.getElementById("PHONE").innerText,
+        "contact": document.getElementById("PHONE").innerText,
       },
-      "handler": function (response) {
-        let bodyFormData = {
-          razorpay_payment_id: response.razorpay_payment_id,
-          razorpay_order_id: response.razorpay_order_id,
-          razorpay_signature: response.razorpay_signature
+      config: {
+        display: {
+          hide: [
+            {
+              method: 'emi'
+            }, {
+              method: 'wallet'
+            }
+          ],
+          preferences: {
+            show_default_blocks: true,
+          },
+        },
+      },
+      "modal": {
+      "ondismiss": function () {
+        if (confirm("Are you sure, you want to close the form?")) {
+          txt = "You pressed OK!";
+          console.log("Checkout form closed by the user");
+        } else {
+          txt = "You pressed Cancel!";
+          console.log("Complete the Payment")
         }
-        axios({
-          method: "post",
-          url: `/verify`,
-          data: bodyFormData,
-          headers: { "Content-Type": "application/json" },
-        })
-          .then(function (response) {
-            window.location = `${window.location.origin}/success?registrationId=${document.getElementById('REGISTRATION_ID').innerText}`
-          })
-          .catch(function (response) {
-            console.log({ response });
-            window.location = `${window.location.origin}/failure`
-
-          });
-      },
-      "theme": {
-        "color": "#1565D8"
       }
+    },
+    "handler": function (response) {
+      let bodyFormData = {
+        razorpay_payment_id: response.razorpay_payment_id,
+        razorpay_order_id: response.razorpay_order_id,
+        razorpay_signature: response.razorpay_signature
+      }
+      axios({
+        method: "post",
+        url: `/verify`,
+        data: bodyFormData,
+        headers: { "Content-Type": "application/json" },
+      })
+        .then(function (response) {
+          window.location = `${window.location.origin}/success?registrationId=${document.getElementById('REGISTRATION_ID').innerText}`
+        })
+        .catch(function (response) {
+          console.log({ response });
+          window.location = `${window.location.origin}/failure`
+
+        });
+    },
+    "theme": {
+      "color": "#1565D8"
+    }
     }
     console.log({ options })
     var rzp1 = new Razorpay(options);
     rzp1.on('payment.failed', function (response) {
-        ondismissEvent();
+      ondismissEvent();
     });
     document.getElementById('rzp-button1').onclick = function (e) {
       rzp1.open();
