@@ -3,10 +3,12 @@ const Registration = require("../models/registration");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const Payment = require("../models/payment");
+require("dotenv").configure();
+
 
 var instance = new Razorpay({
-  key_id: "rzp_test_FBhzettF0b2FZU",
-  key_secret: "eJA2LybH9bZ7GgKkvM1kXgsL",
+  key_id: process.env.KEY_ID,
+  key_secret: process.env.KEY_SECRET,
 });
 
 const defaultWorkshops = {
@@ -107,7 +109,7 @@ router.post("/verify", async (req, res) => {
     let body = `${orderId}|${paymentId}`;
 
     var expectedSignature = crypto
-      .createHmac("sha256", "eJA2LybH9bZ7GgKkvM1kXgsL")
+      .createHmac("sha256", process.env.KEY_SECRET)
       .update(body.toString())
       .digest("hex");
     let newStatus = "created";

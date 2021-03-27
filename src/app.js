@@ -2,20 +2,17 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const hbs = require("hbs");
+require("dotenv").configure();
 
 mongoose.connect(
-  "mongodb+srv://srijan:srijan@cluster.7jtpo.mongodb.net/RegisterTest?retryWrites=true&w=majority",
+  process.env.MONGODB_URL,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
 );
 
-const router = require("./routers/router");
-const paytmRouter = require("./routers/paytmRouter");
 const notifyRouter = require("./routers/notify");
-const paymentRouter = require("./routers/razorpay");
 const registerRouter = require("./routers/register")
 
 const app = express();
@@ -37,10 +34,7 @@ app.use(express.static(publicDirectoryPath));
 
 const port = process.env.PORT || 3000;
 
-app.use("/register", router);
-app.use("/paytmPath", paytmRouter);
 app.use("/notify", notifyRouter);
-// app.use("/", paymentRouter);
 app.use('/', registerRouter)
 
 app.get('/register', (req, res)=>{
