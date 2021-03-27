@@ -1,3 +1,4 @@
+//Model for workshop registration
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;

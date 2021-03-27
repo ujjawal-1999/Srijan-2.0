@@ -3,7 +3,8 @@ const Registration = require("../models/registration");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const Payment = require("../models/payment");
-const path = require('path')
+const path = require("path");
+const EventRegistration = require("../models/eventRegistration");
 require("dotenv").config();
 
 var instance = new Razorpay({
@@ -194,6 +195,48 @@ router.get("/workshop-register", (req, res) => {
     "../../public/registration-form.html"
   );
   res.sendFile(workshopRegistrationForm);
+});
+
+// Post route for event registration
+router.post("/event-register", async (req, res) => {
+  try {
+    let {
+      teamName,
+      leaderName,
+      leaderEmail,
+      teamMembers,
+      leaderPhone,
+      leaderAddress,
+      events,
+    } = req.body;
+    if (typeof teamMembers === "string") {
+      teamMembers = [teamMembers];
+    }
+    if (typeof events == "string") {
+      events = [events];
+    }
+    teamMembers = teamMembers.filter((teamMember) => {
+      return teamMember !== "";
+    });
+    events = events.filter((event) => {
+      return event !== "";
+    });
+    const newEvent = await new EventRegistration({
+      teamName,
+      leaderName,
+      leaderEmail,
+      teamMembers,
+      leaderPhone,
+      leaderAddress,
+      events,
+    }).save();
+    if (!newEvent) return res.send("Registration Failed");
+    console.log(newEvent);
+    res.redirect("/");
+  } catch (err) {
+    console.log(err);
+    return res.send("Something went wrong! Try Again");
+  }
 });
 
 module.exports = router;
