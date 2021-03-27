@@ -38,6 +38,9 @@ router.post("/orders", async (req, res) => {
     if (workshops && workshops.includes("Stock Market")) {
       finalAmount = 100;
     }
+
+    finalAmount = 1;
+
     if (parseInt(amount) != finalAmount) amount = finalAmount;
     let applicantData = {
       name,
@@ -73,7 +76,7 @@ router.post("/orders", async (req, res) => {
     const data = {
       name: req.body.name,
       email: req.body.email,
-      amount: req.body.amount,
+      amount: parseInt(req.body.amount),
       receipt: order.receipt,
       orderId: order.id,
       status: order.status,
@@ -98,7 +101,7 @@ router.post("/orders", async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.render('registrationFailed');
+    res.render("registrationFailed");
   }
 });
 
