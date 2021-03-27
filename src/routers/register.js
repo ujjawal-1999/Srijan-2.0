@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Registration = require("../models/registration");
+const WorkshopRegistration = require("../models/workshopRegistration");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const Payment = require("../models/payment");
@@ -13,10 +13,7 @@ var instance = new Razorpay({
 });
 
 const defaultWorkshops = {
-  "Technical Workshop": 300,
-  "Skill Building Workshop": 300,
-  "Financial Assistance Workshop": 300,
-  "Entrepreneur Essentials": 300,
+  "Stock Market": 100,
 };
 
 router.post("/orders", async (req, res) => {
@@ -29,21 +26,20 @@ router.post("/orders", async (req, res) => {
       graduationYear,
       workshops,
       amount,
-      tshirt,
-      tshirtSize,
+
     } = req.body;
 
     if (typeof workshops === "string") workshops = [workshops];
-    if (tshirt === "Yes") tshirt = true;
-    else tshirt = false;
-
+    workshops = workshops.filter((workshop)=>{
+      return workshop !== ''
+    })
+    
+    if(workshops.length > 2)
+      return res.redirect('/workshop-register');
     let finalAmount = 0;
-    if (workshops && workshops.length) {
-      workshops.forEach((workshop) => {
-        finalAmount += defaultWorkshops[workshop];
-      });
+    if (workshops && workshops.includes('Stock Market')) {
+        finalAmount = 100;
     }
-    if (tshirt) finalAmount += 350;
     if (parseInt(amount) != finalAmount) amount = finalAmount;
     let applicantData = {
       name,
@@ -53,9 +49,12 @@ router.post("/orders", async (req, res) => {
       graduationYear,
       workshops,
       amount,
-      tshirt,
-      tshirtSize,
     };
+    if(amount == 0){
+      let registration = await new WorkshopRegistration(applicantData).save();
+      // return res.render('success');
+      return res.send('Success');
+    }
     // let registration = await new Registration(applicantData).save();
     // console.log(registration);
 
@@ -86,7 +85,7 @@ router.post("/orders", async (req, res) => {
 
     applicantData.paymentId = newPayment._id;
 
-    let registration = await new Registration(applicantData).save();
+    let registration = await new WorkshopRegistration(applicantData).save();
     console.log(registration);
 
     //Create an object here to genereate popup params
