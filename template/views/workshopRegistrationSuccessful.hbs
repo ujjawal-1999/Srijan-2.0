@@ -82,16 +82,20 @@
       <!-- <p><span class="variable">Reference No</span><span class="value">   -   12345678</span></p>
             <p><span class="variable">Order Id</span><span class="value">   -   RFABC12345</span></p>
             <p><span class="variable">Receipt Number</span><span class="value">   -   0123456789</span></p> -->
-      <p><span class="variable"> Name - </span><span class="value">{{data.teamName}}</span></p>
-      <p><span class="variable">Email Id - </span><span class="value"> {{data.leaderEmail}}</span></p>
-      <p><span class="variable">Phone Number - </span><span class="value">{{data.leaderphone}}</span></p>
+      <p><span class="variable"> Name - </span><span class="value">{{data.name}}</span></p>
+      <p><span class="variable">Email Id - </span><span class="value"> {{data.email}}</span></p>
+      <p><span class="variable">Phone Number - </span><span class="value">{{data.phone}}</span></p>
+      <p><span class="variable">College - </span><span class="value">{{data.college}}</span></p>
+      <p><span class="variable">Graduation Year - </span><span class="value">{{data.graduationYear}}</span></p>
       <p><span class="variable">Workshops: - </span><span class="value"></p>
       <ul style="list-style-type: circle;">
-        {{#each data.events}}
+        {{#each data.workshops}}
         <li>{{this}}</li>
         {{/each}}
       </ul>
       </span>
+      <br/>
+      <br/>
       <!-- <p><span class="variable">Total Amount Paid</span><span class="value">   -   350/-</span></p> -->
       <button id="print-receipt" class="proceed" onclick="printDiv()"> <a class="onHoverfocus" href="index.html">Click Here to
           Print</a></button>

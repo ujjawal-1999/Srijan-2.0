@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
     res.redirect("/");
   } catch (error) {
     console.log(error);
-    res.redirect("/");
+    res.render("error");
   }
 });
 

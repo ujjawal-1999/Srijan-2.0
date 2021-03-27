@@ -85,13 +85,14 @@
       <p><span class="variable">Name</span><span class="value"> - {{registration.name}}</span></p>
       <p><span class="variable">Email Id</span><span class="value"> - {{registration.email}}</span></p>
       <p><span class="variable">Phone Number</span><span class="value"> - {{registration.phone}}</span></p>
-      <span class="variable">Workshops</span><span class="value">
+      <p><span class="variable">Workshops</span><span class="value">
         <ul style="list-style-type: circle;">
           {{#each registration.workshops}}
           <li>{{this}}</li>
           {{/each}}
         </ul>
       </span>
+      </p>
       <p><span class="variable">Total Amount Paid</span><span class="value"> - {{registration.amount}}/-</span></p>
 
     </div>

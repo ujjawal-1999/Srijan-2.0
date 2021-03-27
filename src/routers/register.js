@@ -51,7 +51,10 @@ router.post("/orders", async (req, res) => {
     if (amount == 0) {
       let registration = await new WorkshopRegistration(applicantData).save();
       // return res.render('success');
-      return res.send("Success");
+      // return res.send("Success");
+      return res.render("workshopRegistrationSuccessful", {
+        data: registration,
+      });
     }
     // let registration = await new Registration(applicantData).save();
     // console.log(registration);
@@ -79,12 +82,12 @@ router.post("/orders", async (req, res) => {
     const newPayment = await new Payment({
       data: data,
     }).save();
-    console.log({ newPayment });
+    // console.log({ newPayment });
 
     applicantData.paymentId = newPayment._id;
 
     let registration = await new WorkshopRegistration(applicantData).save();
-    console.log(registration);
+    // console.log(registration);
 
     //Create an object here to genereate popup params
     res.render("verifyDetails", {
@@ -95,7 +98,7 @@ router.post("/orders", async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.send("Fail");
+    res.render('registrationFailed');
   }
 });
 
@@ -116,7 +119,7 @@ router.post("/verify", async (req, res) => {
     } else {
       newStatus = "Unauthenticated";
     }
-    console.log({ newStatus });
+    // console.log({ newStatus });
     const newPay = await Payment.findOneAndUpdate(
       { "data.orderId": orderId },
       {
@@ -126,8 +129,7 @@ router.post("/verify", async (req, res) => {
       },
       { new: true }
     );
-    console.log({ newPay });
-    // res.redirect(`/success/${registration._id}`);
+    // console.log({ newPay });
     res.end();
   } catch (error) {
     console.log(error);
@@ -138,9 +140,9 @@ router.post("/verify", async (req, res) => {
 router.get("/success", async (req, res) => {
   try {
     let registrationId = req.query.registrationId;
-    console.log("Starting Success route");
-    console.log("Registration id: ", registrationId);
-    console.log("Registration id: ", typeof registrationId);
+    // console.log("Starting Success route");
+    // console.log("Registration id: ", registrationId);
+    // console.log("Registration id: ", typeof registrationId);
 
     if (!registrationId) {
       console.log("No registration id");
@@ -149,7 +151,7 @@ router.get("/success", async (req, res) => {
 
     let registration = await WorkshopRegistration.findById(registrationId);
     if (!registration) {
-      console.log("No registration with given id");
+      // console.log("No registration with given id");
       return res.redirect("/failure");
     }
 
@@ -159,8 +161,8 @@ router.get("/success", async (req, res) => {
       console.log("No Payment data");
       return res.redirect("/failure");
     }
-    console.log("Final Data Reg: ", registration);
-    console.log("Final Data Pay: ", paymentData);
+    // console.log("Final Data Reg: ", registration);
+    // console.log("Final Data Pay: ", paymentData);
 
     res.render("paymentSuccess", {
       registration,
@@ -228,7 +230,7 @@ router.post("/event-register", async (req, res) => {
       events,
     }).save();
     if (!newEvent) return res.render("registrationFailed");
-    console.log(newEvent);
+    // console.log(newEvent);
     res.render("registrationSuccessful", { data: newEvent });
   } catch (err) {
     console.log(err);

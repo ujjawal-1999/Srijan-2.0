@@ -20,7 +20,7 @@ app.use(
     extended: true,
   })
 );
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 const publicDirectoryPath = path.join(__dirname, "../public");
 
@@ -33,6 +33,10 @@ const port = process.env.PORT || 3000;
 
 app.use("/notify", notifyRouter);
 app.use("/", registerRouter);
+
+app.get("*", (req, res) => {
+  res.render("error");
+});
 
 app.listen(port, () => {
   console.log("Server is up on port : " + port);
