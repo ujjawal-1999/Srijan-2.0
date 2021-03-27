@@ -39,7 +39,6 @@ router.post("/orders", async (req, res) => {
       finalAmount = 100;
     }
 
-    finalAmount = 1;
 
     if (parseInt(amount) != finalAmount) amount = finalAmount;
     let applicantData = {
