@@ -5,8 +5,8 @@ const express = require("express");
 const router = express.Router();
 
 var instance = new Razorpay({
-  key_id: "rzp_test_FBhzettF0b2FZU",
-  key_secret: "eJA2LybH9bZ7GgKkvM1kXgsL",
+  key_id: process.env.KEY_ID,
+  key_secret: process.env.KEY_SECRET,
 });
 
 //Route to create order id
@@ -38,8 +38,8 @@ router.post("/orders", async (req, res) => {
     //Create an object here to genereate popup params
     res.render("checkout", {
       order,
-      key_id: "rzp_test_FBhzettF0b2FZU",
-      key_secret: "eJA2LybH9bZ7GgKkvM1kXgsL",
+      key_id: instance.key_id,
+      key_secret: instance.key_secret,
     });
   } catch (error) {
     console.log(error);
@@ -55,7 +55,7 @@ router.post("/verify", async (req, res) => {
     let body = `${orderId}|${paymentId}`;
 
     var expectedSignature = crypto
-      .createHmac("sha256", "eJA2LybH9bZ7GgKkvM1kXgsL")
+      .createHmac("sha256", process.env.KEY_SECRET)
       .update(body.toString())
       .digest("hex");
     let newStatus = "created";
