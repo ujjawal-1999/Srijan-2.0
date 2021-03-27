@@ -18,7 +18,7 @@
 
     <meta property="og:title" content="Srijan Website" />
     <meta property="og:type" content="event" />
-    <meta property="og:url" content="http://srijan-nits.in" />
+    <meta property="og:url" content="http://srijan-nits.com" />
     <meta
       property="og:site_name"
       content="National Institute of Technology Silchar"
@@ -34,7 +34,7 @@
       type="image/gif"
       sizes="16x16"
     />
-    <link rel="canonical" href="http://srijan-nits.in" />
+    <link rel="canonical" href="http://srijan-nits.com" />
     <!-- Google font -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:400,700,900"
@@ -94,11 +94,11 @@
                 <div class="success"><i class="fas fa-check-circle"></i></div>
             </div>
             <div class="form-heading">
-                <h1>Payment Successfull!</h1>
+                <h1>Registration Successfull!</h1>
             </div>
-            <p><span class="variable">Reference No</span><span class="value">   -   12345678</span></p>
+            <!-- <p><span class="variable">Reference No</span><span class="value">   -   12345678</span></p>
             <p><span class="variable">Order Id</span><span class="value">   -   RFABC12345</span></p>
-            <p><span class="variable">Receipt Number</span><span class="value">   -   0123456789</span></p>
+            <p><span class="variable">Receipt Number</span><span class="value">   -   0123456789</span></p> -->
             <p><span class="variable">Name</span><span class="value">   -   Riya</span></p>
             <p><span class="variable">Email Id</span><span class="value">   -   Riya@gmail.com</span></p>
             <p><span class="variable">Phone Number</span><span class="value">   -   1234567890</span></p>
@@ -109,23 +109,13 @@
                     <li>C</li>
                 </ul>
             </span>
-            <p><span class="variable">Total Amount Paid</span><span class="value">   -   350/-</span></p>
+            <!-- <p><span class="variable">Total Amount Paid</span><span class="value">   -   350/-</span></p> -->
+            <button id="print-receipt" class="proceed" onclick="printDiv()"> <a href="index.html">Click Here to Print</a></button>
 
         </div>
        
-        <button id="print-receipt" class="proceed" onclick="printDiv()"> <a href="index.html">Click Here to Download Receipt</a></button>
 
-        <div class="payment-failed" style="display: none;">
-            <div class="status-icon">
-                <div class="fail"><i class="fas fa-times-circle"></i></div>
-            </div>
-            <div class="form-heading">
-                <h1>Payment Unsuccessfull!</h1>
-            </div>
-            <p><span class="variable">Please Ty Again!!!</span></p>
-            <button id="index-page" class="proceed"> <a href="registration-form.html">Click Here to go to the Registration Page</a></button>
-
-        </div>
+        
     </div>
     <script src="js/registration-form.js"></script>
   </body>
