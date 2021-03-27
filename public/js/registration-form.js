@@ -82,7 +82,9 @@ for(var i=0; i<wsCheckbox.length; i++){
   
 //   ws.addEventListener('change', maxLimitCheck);
 // }
-
+stockMarket = document.querySelector("#stock_market")
+workshopForm = document.querySelector("#workshop-form")
+console.log(workshopForm)
 function maxLimitCheck(){
   var k = 0;
   console.log(k)
@@ -90,10 +92,18 @@ function maxLimitCheck(){
     if(wsCheckbox[i].checked === true ){
       k++;
     }
+   
   }
   if(k>2){
     return false
   }
+  if(stockMarket.checked){
+    workshopForm.action = '/workshop'
+ }
+  if(!stockMarket.checked){
+    workshopForm.action = '/order'
+  }
+
   console.log(k)
 }
 
