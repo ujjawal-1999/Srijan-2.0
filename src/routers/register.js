@@ -1,10 +1,11 @@
 const router = require("express").Router();
-const Registration = require("../models/registration");
+const WorkshopRegistration = require("../models/workshopRegistration");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const Payment = require("../models/payment");
-require("dotenv").configure();
-
+const path = require("path");
+const EventRegistration = require("../models/eventRegistration");
+require("dotenv").config();
 
 var instance = new Razorpay({
   key_id: process.env.KEY_ID,
@@ -12,10 +13,7 @@ var instance = new Razorpay({
 });
 
 const defaultWorkshops = {
-  "Technical Workshop": 300,
-  "Skill Building Workshop": 300,
-  "Financial Assistance Workshop": 300,
-  "Entrepreneur Essentials": 300,
+  "Stock Market": 100,
 };
 
 router.post("/orders", async (req, res) => {
@@ -28,21 +26,20 @@ router.post("/orders", async (req, res) => {
       graduationYear,
       workshops,
       amount,
-      tshirt,
-      tshirtSize,
     } = req.body;
 
     if (typeof workshops === "string") workshops = [workshops];
-    if (tshirt === "Yes") tshirt = true;
-    else tshirt = false;
+    workshops = workshops.filter((workshop) => {
+      return workshop !== "";
+    });
 
+    if (workshops.length > 2) return res.redirect("/workshop-register");
     let finalAmount = 0;
-    if (workshops && workshops.length) {
-      workshops.forEach((workshop) => {
-        finalAmount += defaultWorkshops[workshop];
-      });
+    if (workshops && workshops.includes("Stock Market")) {
+      finalAmount = 100;
     }
-    if (tshirt) finalAmount += 350;
+
+
     if (parseInt(amount) != finalAmount) amount = finalAmount;
     let applicantData = {
       name,
@@ -52,9 +49,15 @@ router.post("/orders", async (req, res) => {
       graduationYear,
       workshops,
       amount,
-      tshirt,
-      tshirtSize,
     };
+    if (amount == 0) {
+      let registration = await new WorkshopRegistration(applicantData).save();
+      // return res.render('success');
+      // return res.send("Success");
+      return res.render("workshopRegistrationSuccessful", {
+        data: registration,
+      });
+    }
     // let registration = await new Registration(applicantData).save();
     // console.log(registration);
 
@@ -72,7 +75,7 @@ router.post("/orders", async (req, res) => {
     const data = {
       name: req.body.name,
       email: req.body.email,
-      amount: req.body.amount,
+      amount: parseInt(req.body.amount),
       receipt: order.receipt,
       orderId: order.id,
       status: order.status,
@@ -81,12 +84,12 @@ router.post("/orders", async (req, res) => {
     const newPayment = await new Payment({
       data: data,
     }).save();
-    console.log({ newPayment });
+    // console.log({ newPayment });
 
     applicantData.paymentId = newPayment._id;
 
-    let registration = await new Registration(applicantData).save();
-    console.log(registration);
+    let registration = await new WorkshopRegistration(applicantData).save();
+    // console.log(registration);
 
     //Create an object here to genereate popup params
     res.render("verifyDetails", {
@@ -97,7 +100,7 @@ router.post("/orders", async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.send("Fail");
+    res.render("registrationFailed");
   }
 });
 
@@ -118,7 +121,7 @@ router.post("/verify", async (req, res) => {
     } else {
       newStatus = "Unauthenticated";
     }
-    console.log({ newStatus });
+    // console.log({ newStatus });
     const newPay = await Payment.findOneAndUpdate(
       { "data.orderId": orderId },
       {
@@ -128,8 +131,7 @@ router.post("/verify", async (req, res) => {
       },
       { new: true }
     );
-    console.log({ newPay });
-    // res.redirect(`/success/${registration._id}`);
+    // console.log({ newPay });
     res.end();
   } catch (error) {
     console.log(error);
@@ -140,18 +142,18 @@ router.post("/verify", async (req, res) => {
 router.get("/success", async (req, res) => {
   try {
     let registrationId = req.query.registrationId;
-    console.log("Starting Success route");
-    console.log("Registration id: ", registrationId);
-    console.log("Registration id: ", typeof registrationId);
+    // console.log("Starting Success route");
+    // console.log("Registration id: ", registrationId);
+    // console.log("Registration id: ", typeof registrationId);
 
     if (!registrationId) {
       console.log("No registration id");
       return res.redirect("/failure");
     }
 
-    let registration = await Registration.findById(registrationId);
+    let registration = await WorkshopRegistration.findById(registrationId);
     if (!registration) {
-      console.log("No registration with given id");
+      // console.log("No registration with given id");
       return res.redirect("/failure");
     }
 
@@ -159,10 +161,10 @@ router.get("/success", async (req, res) => {
 
     if (!paymentData) {
       console.log("No Payment data");
-      return res.render("/failure");
+      return res.redirect("/failure");
     }
-    console.log("Final Data Reg: ", registration);
-    console.log("Final Data Pay: ", paymentData);
+    // console.log("Final Data Reg: ", registration);
+    // console.log("Final Data Pay: ", paymentData);
 
     res.render("paymentSuccess", {
       registration,
@@ -176,6 +178,66 @@ router.get("/success", async (req, res) => {
 
 router.get("/failure", (req, res) => {
   res.render("paymentFailure");
+});
+
+// Get routes for regstration pages
+
+router.get("/event-register", (req, res) => {
+  let eventRegistrationForm = path.join(
+    __dirname,
+    "../../public/event-registration-form.html"
+  );
+  res.sendFile(eventRegistrationForm);
+});
+
+router.get("/workshop-register", (req, res) => {
+  let workshopRegistrationForm = path.join(
+    __dirname,
+    "../../public/registration-form.html"
+  );
+  res.sendFile(workshopRegistrationForm);
+});
+
+// Post route for event registration
+router.post("/event-register", async (req, res) => {
+  try {
+    let {
+      teamName,
+      leaderName,
+      leaderEmail,
+      teamMembers,
+      leaderPhone,
+      leaderAddress,
+      events,
+    } = req.body;
+    if (typeof teamMembers === "string") {
+      teamMembers = [teamMembers];
+    }
+    if (typeof events == "string") {
+      events = [events];
+    }
+    teamMembers = teamMembers.filter((teamMember) => {
+      return teamMember !== "";
+    });
+    events = events.filter((event) => {
+      return event !== "";
+    });
+    const newEvent = await new EventRegistration({
+      teamName,
+      leaderName,
+      leaderEmail,
+      teamMembers,
+      leaderPhone,
+      leaderAddress,
+      events,
+    }).save();
+    if (!newEvent) return res.render("registrationFailed");
+    // console.log(newEvent);
+    res.render("registrationSuccessful", { data: newEvent });
+  } catch (err) {
+    console.log(err);
+    return res.render("registrationFailed");
+  }
 });
 
 module.exports = router;
