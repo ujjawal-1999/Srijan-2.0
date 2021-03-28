@@ -117,7 +117,10 @@ textarea:active, textarea:focus{
     left: 15%;
     position: relative;
     padding: 1.5%;
-
+    margin-top: 1vh;
+}
+.proceed a:hover{
+    background-color: unset;
 }
 .nav-icons{
     display: flex;
