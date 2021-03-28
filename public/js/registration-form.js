@@ -40,6 +40,16 @@ function setPrice(){
 }
 
 function changePrice(){
+  // console.log(this.checked);
+    var chosen = 0;
+    for(i=0;i<wsCheckbox.length;i++){
+      if(wsCheckbox[i].checked)
+      chosen++;
+    }
+    if(chosen>2){
+      this.checked = false;
+      return;
+    }
     if(this.id == 'tsCheckbox'){
         if(this.checked){
             priceToBePaid += tsPrice;
@@ -82,23 +92,21 @@ for(var i=0; i<wsCheckbox.length; i++){
   
 //   ws.addEventListener('change', maxLimitCheck);
 // }
-let stockMarket = document.querySelector("#stock_market")
-let workshopForm = document.querySelector("#workshop-form")
-console.log(workshopForm)
-function maxLimitCheck(){
-  var k = 0;
-  console.log(k)
-  for(var i=0; i<wsCheckbox.length; i++){
-    if(wsCheckbox[i].checked === true ){
-      k++;
-    }
+
+// let stockMarket = document.querySelector("#stock_market")
+// let workshopForm = document.querySelector("#workshop-form")
+// function maxLimitCheck(){
+//   var k = 0;
+//   for(var i=0; i<wsCheckbox.length; i++){
+//     if(wsCheckbox[i].checked === true ){
+//       k++;
+//     }
    
-  }
-  if(k>2){
-    return false
-  }
-  console.log(k)
-}
+//   }
+//   if(k>2){
+//     return false
+//   }
+// }
 
 
 
@@ -207,3 +215,12 @@ document.addEventListener('wheel', event => {
         </div>
       </div>
     </div> */}
+
+    function onlyNumberKey(evt) {
+          
+      // Only ASCII charactar in that range allowed
+      var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+      if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+          return false;
+      return true;
+  }

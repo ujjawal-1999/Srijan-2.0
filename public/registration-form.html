@@ -87,7 +87,7 @@
             <label>Email Id</label>
             <input type="email" id="student-email" name="email" required>
             <label>Phone number</label>
-            <input type="number" id="student-number" name="phone" required>
+            <input type="tel"  onkeypress="return onlyNumberKey(event)" id="student-number" name="phone" required>
           </div>
         </section>
 
@@ -124,11 +124,11 @@
             <!-- <label>Workshop</label> -->
             <div class="workshops">
               <label class="checkbox"><input class="ws" id="stock_market" name="workshops" type="checkbox"
-                  value="Stock Market" onclick="return maxLimitCheck()"> <p class="wsLabel" >Stock Market Workshop</p> </label>
+                  value="Stock Market" > <p class="wsLabel" >Stock Market Workshop</p> </label>
               <label class="checkbox"><input class="ws" id="cyber_security" name="workshops" type="checkbox"
-                  value="Digital Marketing" onclick="return maxLimitCheck()"><p class="wsLabel">Digital Marketing</p></label>
+                  value="Digital Marketing" ><p class="wsLabel">Digital Marketing</p></label>
               <label class="checkbox"><input class="ws" id="cyber_security" name="workshops" type="checkbox"
-                value="Cyber Security" onclick="return maxLimitCheck()"><p class="wsLabel">Cyber Security</p></label>
+                value="Cyber Security" ><p class="wsLabel">Cyber Security</p></label>
             </div>
             <!-- <label>Do you want T-shirt?</label>
             <label class="checkbox"><input id="tsCheckbox" type="checkbox" name="tshirt" value="Yes" checked>Yes</label>
