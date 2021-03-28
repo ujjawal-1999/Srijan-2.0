@@ -39,7 +39,6 @@ router.post("/orders", async (req, res) => {
       finalAmount = 100;
     }
 
-
     if (parseInt(amount) != finalAmount) amount = finalAmount;
     let applicantData = {
       name,
@@ -231,12 +230,12 @@ router.post("/event-register", async (req, res) => {
       leaderAddress,
       events,
     }).save();
-    if (!newEvent) return res.render("registrationFailed");
+    if (!newEvent) return res.render("eventRegistrationFailed");
     // console.log(newEvent);
     res.render("registrationSuccessful", { data: newEvent });
   } catch (err) {
     console.log(err);
-    return res.render("registrationFailed");
+    return res.render("eventRegistrationFailed");
   }
 });
 
