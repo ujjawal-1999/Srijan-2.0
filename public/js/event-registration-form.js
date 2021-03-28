@@ -1,74 +1,17 @@
-// const wsPrice = {
-//     technical: 300,
-//     skill_building: 300,
-//     financial_assistance: 300,
-//     entrepreneur_essentials: 300
-//   }
-//   const tsPrice = 350;
-  
-//   var priceToBePaid = 0;
-  
-//   const tsCheckbox = document.querySelector('#tsCheckbox');
-//   const wsCheckbox = document.querySelectorAll(".ws");
-//   const sizeSelect = document.querySelector('.size');
-  
-//   const priceDisplay = document.querySelector('.amount');
-  
-//   function showSizeSelect(status){
-//       if( status ){
-//           sizeSelect.style.display = 'block';
-//       }
-//       if( !status ){
-//           sizeSelect.style.display = 'none';
-//       }
-//   }
-  
-//   function setPrice(){
-//     if(tsCheckbox.checked){
-//       priceToBePaid += tsPrice;
-//       showSizeSelect(1);
-//     }
-//     else{
-//       showSizeSelect(0);
-//     }
-//     for(let i=0 ; i<wsCheckbox.length ; i++){
-//       let ws = wsCheckbox[i];
-//       if( ws.checked ){
-//         priceToBePaid += wsPrice[ ws.id ];
-//       }
-//     }
-//     priceDisplay.value = parseInt(priceToBePaid);
-//   }
-  
-//   function changePrice(){
-//       if(this.id == 'tsCheckbox'){
-//           if(this.checked){
-//               priceToBePaid += tsPrice;
-//               showSizeSelect(1);
-//           }
-//           else{
-//               priceToBePaid -= tsPrice;
-//               showSizeSelect(0)
-//           }
-//       }
-//       else{
-//           if(this.checked)
-//           priceToBePaid += wsPrice[ this.id ]
-//           else
-//           priceToBePaid -= wsPrice[ this.id ]
-//       }
-//       priceDisplay.value = parseInt(priceToBePaid);
-//   }
-  
-  
-//   for(var i=0; i<wsCheckbox.length; i++){
-//       var ws = wsCheckbox[i];
-//       ws.addEventListener('click', changePrice );
-//   }
-  
-//   tsCheckbox.addEventListener('click', changePrice );
-  
-  
+
+  function validateEventForm(){
+    var chosen = 0;
+    var eventCheckbox = document.querySelectorAll('.ws');
+    for(var i= 0; i<eventCheckbox.length;i++){
+      if(eventCheckbox[i].checked){
+        chosen++;
+      }
+    }
+    if(chosen == 0){
+      window.alert("Select Atleast 1 Event");
+      return false;
+    }
+  }
   
   
   const content = document.querySelectorAll('section');

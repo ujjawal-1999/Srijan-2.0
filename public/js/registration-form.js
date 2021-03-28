@@ -75,6 +75,18 @@ for(var i=0; i<wsCheckbox.length; i++){
     ws.addEventListener('click', changePrice );
 }
 
+function validateForm(){
+  var chosen = 0;
+  for(i=0;i<wsCheckbox.length;i++){
+    if(wsCheckbox[i].checked)
+    chosen++;
+  }
+  if(chosen ==0){
+    window.alert("Select atleast 1 Workshop");
+    return false;
+  }
+}
+
 // tsCheckbox.addEventListener('click', changePrice );
 // var limit = 2;
 // for(var i=0; i<wsCheckbox.length; i++){

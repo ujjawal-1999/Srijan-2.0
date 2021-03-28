@@ -81,7 +81,7 @@
   <div class="registration-event">
     <div class="container event-form">
 
-      <form class="event-registration" action="/event-register" method="POST">
+      <form class="event-registration" onsubmit="return validateEventForm()" action="/event-register" method="POST">
 
         <section>
           <div class="text">
@@ -95,7 +95,7 @@
             <label>Team Leader Email</label>
             <input type="email" id="student-email" name="leaderEmail" required>
             <label>Team Leader Phone number</label>
-            <input type="tel" id="student-number" onkeypress="return onlyNumberKey(event)" name="leaderPhone" required>
+            <input type="tel" id="student-number" pattern="^[0-9]{10}$" title="10 digit phone number" onkeypress="return onlyNumberKey(event)" name="leaderPhone" required>
           </div>
         </section>
 
