@@ -201,6 +201,7 @@ document.addEventListener('wheel', event => {
         window.print();
 
         document.body.innerHTML = originalContents;
+        window.location = window.location.origin;
       }
     // </script>
 
