@@ -329,6 +329,9 @@ ul{
     .form-heading h2{
         font-size: 21px;
     }
+    #print-receipt{
+        display: none;
+    }
 }
 
 .onHoverfocus{
