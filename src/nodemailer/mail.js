@@ -102,8 +102,8 @@ function sendBody(subject, body, content, link, button, link1, button1 ) {
             }
     
             img[class="img-max"] {
-              max-width: 100% !important;
-              height: auto !important;
+              max-width : 300px !important;
+              max-height : 100px !important;
             }
     
             /* FULL-WIDTH TABLES */
@@ -282,30 +282,6 @@ function sendBody(subject, body, content, link, button, link1, button1 ) {
                                     cellspacing="0"
                                     cellpadding="0"
                                   >
-                                    <tr>
-                                      <td>
-                                        <a
-                                          href="https://srijan-nits.in"
-                                          ><img
-                                            src="cid:unique@kreata.ee"
-                                            border="0"
-                                            alt="SRIJAN NIT Silchar"
-                                            style="
-                                            border: 0;
-                                            height: auto;
-                                            line-height: 100%;
-                                            display: flex;
-                                            height: 100px;
-                                            width: 300px
-                                            margin-left: auto;
-                                            margin-right: auto;
-                                            outline: none;
-                                            text-decoration: none;
-                                            "
-                                            class="img-max"
-                                        /></a>
-                                      </td>
-                                    </tr>
                                   </table>
                                 </td>
                               </tr>
@@ -452,9 +428,9 @@ function sendBody(subject, body, content, link, button, link1, button1 ) {
 //for sending to user
 const contact = (email) => {
   var transporter = nodemailer.createTransport({
-    host: 'smtp-mail.outlook.com',
+    host: 'smtpout.secureserver.net',
     service: 'Godaddy',
-	port: 587,
+	port: 465,
 	secureConnection: false,
     auth: {
       user: process.env.NODEMAILER_EMAIL, //email id
@@ -478,13 +454,6 @@ const contact = (email) => {
       "https://srijan-nits.in/srijan_brochure.pdf",
       "Click Here to view the Brochure"
     ),
-    attachments: [
-      {
-        filename: "logo.png",
-        path: __dirname + "/logo.png",
-        cid: "unique@kreata.ee", //same cid value as in the html img src
-      },
-    ],
   };
   // console.log("mailOptions : ", mailOptions);
 
