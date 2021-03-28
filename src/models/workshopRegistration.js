@@ -1,8 +1,9 @@
+//Model for workshop registration
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const registrationSchema = new Schema(
+const workshopRegistrationSchema = new Schema(
   {
     name: {
       type: String,
@@ -22,14 +23,9 @@ const registrationSchema = new Schema(
     graduationYear: {
       type: String,
     },
-    tshirt: {
-      type: Boolean,
-    },
-    tshirtSize: {
-      type: String,
-    },
     amount: {
       type: Number,
+      default : 0
     },
     paymentId: {
       type: mongoose.SchemaTypes.ObjectId,
@@ -41,7 +37,7 @@ const registrationSchema = new Schema(
   }
 );
 
-module.exports = Registration = mongoose.model(
-  "Registration",
-  registrationSchema
+module.exports = WorkshopRegistration = mongoose.model(
+  "WorkshopRegistration",
+  workshopRegistrationSchema
 );

@@ -1464,12 +1464,12 @@ input:focus::placeholder{
 	border-color: #dbdbdb;
 }
 .modal-newsletter .form-control:focus {
-	border-color: #f95858;
-	box-shadow: 0 0 8px rgba(249, 88, 88, 0.4);
+	border-color: #2266bd;
+	box-shadow: 0 0 8px rgba(18, 78, 168, 0.4);
 }
 .modal-newsletter .btn {
 	color: #fff;
-	background: #f95858;
+	background: #2266bd;
 	text-decoration: none;
 	transition: all 0.4s;
 	line-height: normal;
@@ -1479,8 +1479,8 @@ input:focus::placeholder{
 	border: none;
 }
 .modal-newsletter .btn:hover, .modal-newsletter .btn:focus {
-	box-shadow: 0 0 8px rgba(249, 88, 88, 0.4);
-	background: #f72222;
+	box-shadow: 0 0 8px rgba(18, 78, 168, 0.4);
+	background: #2266bd;
 	outline: none;
 }
 .modal-newsletter .input-group {
