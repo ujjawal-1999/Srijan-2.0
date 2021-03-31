@@ -11,7 +11,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 
 const notifyRouter = require("./routers/notify");
 const registerRouter = require("./routers/register");
-
+const applicantsRouter = require('./routers/applications');
 const app = express();
 app.use(express.json());
 
@@ -33,6 +33,7 @@ const port = process.env.PORT || 3000;
 
 app.use("/notify", notifyRouter);
 app.use("/", registerRouter);
+app.use("/admin",applicantsRouter);
 
 app.get("*", (req, res) => {
   res.render("error");

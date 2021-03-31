@@ -29,6 +29,7 @@ const workshopRegistrationSchema = new Schema(
     },
     paymentId: {
       type: mongoose.SchemaTypes.ObjectId,
+      // type: Schema.Types.ObjectId,
       ref: "PaymentSchema",
     },
   },

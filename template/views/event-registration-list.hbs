@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      href="/docsupport/bulb6-slow.gif"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Srijan | Event Registration List</title>
+</head>
+<body>
+    <div class="" style="margin-top: 5vh;">
+    <h1 style="text-align: center;">Event Registration List</h1>
+    <table class="centered responsive-table highlight bordered">
+        <thead>
+          <tr>
+                <th data-field="Team Name">Team Name</th>
+                <th data-field="Team Leader Name">Leader Name</th>
+                <th data-field="Team Leader Email">Leader Email</th>
+                <th data-field="Team Leader Phone">Leader Phone</th>
+                <th data-field="Leader Address">Leader Address</th>
+                <th data-field="Team Members">Team Members</th>
+                <th data-field="Events">Events</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {{#each applicants}}
+              <tr>
+                <td>{{this.teamName}}</td>
+                <td>{{this.leaderName}}</td>
+                <td>{{this.leaderEmail}}</td>
+                <td>{{this.leaderPhone}}</td>
+                <td>{{this.leaderAddress}}</td>
+                <td>
+                    <ul>
+                        {{#each this.teamMembers}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {{#each this.events}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </td>
+              </tr>
+            {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
