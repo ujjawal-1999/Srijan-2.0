@@ -20,6 +20,8 @@ router.get('/workshop-registration-list',async(req,res)=>{
             paymentId = populatedData.paymentId.data.paymentId
             status = populatedData.paymentId.data.status
         }
+        if(populatedData.paymentId && populatedData.paymentId.data.status == 'created')
+            continue;
         let data = new Object({
             name: applicant.name,
             email:applicant.email,
