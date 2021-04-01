@@ -87,6 +87,19 @@ function validateForm(){
   }
 }
 
+document.addEventListener('click',()=>{
+  let terms = document.getElementById('terms');
+  let button = document.getElementById('rzp-button1');
+  if(terms.checked){
+    button.disabled = false;
+    button.style.background = '#1565D8';
+  }
+  else if(!terms.checked){
+    button.disabled = true;
+    button.style.background = 'gray';
+  }
+})
+
 // tsCheckbox.addEventListener('click', changePrice );
 // var limit = 2;
 // for(var i=0; i<wsCheckbox.length; i++){

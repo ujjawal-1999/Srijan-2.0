@@ -93,6 +93,13 @@
         {{/if}}</span></p> --}}
     {{!-- <p><span class="variable">Size</span><span class="value"> - {{newPayment.tshirtSize}}</span></p> --}}
     <p><span class="variable">Total amount to be paid - Rs.</span><span class="value"> {{newPayment.amount}} </span></p>
+    <div style="display: flex;"><input style="display: inline;" class="ws" id="terms" name="terms"
+        type="checkbox" checked />
+      <p style="padding-left: 5px;" class="wsLabel"><b>I have read and agree to the <a href="terms&conditions.html" style="color:blue"
+            target="__blank">Terms and
+            Conditions</a>, <a href="privacy-policy.html" style="color:blue" target="__blank">Privacy Policy</a> and <a
+            href="refund-policy.html" style="color:blue" target="__blank">Refund Policy</a></b></p>
+    </div>
     <div class="confirm-section">
       <div class="form-heading">
         <h2>Proceed to Pay?</h2>
@@ -140,40 +147,40 @@
         },
       },
       "modal": {
-      "ondismiss": function () {
-        if (confirm("Are you sure, you want to close the form?")) {
-          txt = "You pressed OK!";
-          console.log("Checkout form closed by the user");
-        } else {
-          txt = "You pressed Cancel!";
-          console.log("Complete the Payment")
+        "ondismiss": function () {
+          if (confirm("Are you sure, you want to close the form?")) {
+            txt = "You pressed OK!";
+            console.log("Checkout form closed by the user");
+          } else {
+            txt = "You pressed Cancel!";
+            console.log("Complete the Payment")
+          }
         }
-      }
-    },
-    "handler": function (response) {
-      let bodyFormData = {
-        razorpay_payment_id: response.razorpay_payment_id,
-        razorpay_order_id: response.razorpay_order_id,
-        razorpay_signature: response.razorpay_signature
-      }
-      axios({
-        method: "post",
-        url: `/verify`,
-        data: bodyFormData,
-        headers: { "Content-Type": "application/json" },
-      })
-        .then(function (response) {
-          window.location = `${window.location.origin}/success?registrationId=${document.getElementById('REGISTRATION_ID').innerText}`
+      },
+      "handler": function (response) {
+        let bodyFormData = {
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_order_id: response.razorpay_order_id,
+          razorpay_signature: response.razorpay_signature
+        }
+        axios({
+          method: "post",
+          url: `/verify`,
+          data: bodyFormData,
+          headers: { "Content-Type": "application/json" },
         })
-        .catch(function (response) {
-          console.log({ response });
-          window.location = `${window.location.origin}/failure`
+          .then(function (response) {
+            window.location = `${window.location.origin}/success?registrationId=${document.getElementById('REGISTRATION_ID').innerText}`
+          })
+          .catch(function (response) {
+            console.log({ response });
+            window.location = `${window.location.origin}/failure`
 
-        });
-    },
-    "theme": {
-      "color": "#1565D8"
-    }
+          });
+      },
+      "theme": {
+        "color": "#1565D8"
+      }
     }
     console.log({ options })
     var rzp1 = new Razorpay(options);

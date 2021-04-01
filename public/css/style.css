@@ -1044,6 +1044,13 @@ changes */
   opacity: 0.8;
 }
 
+.policy-links a{
+  
+    color: #2266bd;
+    margin-right: 10px;
+
+}
+
 /* form page*/
 
 .box{
