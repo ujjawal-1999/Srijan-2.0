@@ -49,18 +49,34 @@
 		.mobile-space1 {
 			width: 380px;
 		}
-
+		.policy-links{
+			text-align: center;
+			padding-bottom: 10px;
+		}
+		.section{
+			padding: 90px 0px 0px 0px;
+		}
 		@media screen and (max-width: 768px) {
-
 			.mobile-space,
 			.mobile-space1 {
 				display: none;
 				width: 0;
 				height: 0;
 			}
+			.policy-links{
+				display: flex;
+    			flex-direction: column;
+    			justify-content: center;
+    			align-items: center;
+			}
 		}
 		.speaker-modal-close{
 			outline: none !important;
+		}
+		.policy-links a{
+  			color: #2266bd;
+ 			margin-right: 10px;
+			text-decoration: underline;
 		}
 	</style>
 </head>
@@ -2592,6 +2608,11 @@
 						</h2>
 						<h5 style="margin-top: 2vh; text-align: center; color: #0b0f28">In association with <br
 								class="break-class" /> IEEE ComSoc NITS Student Branch Chapter</h5>
+					</div>
+					<div class="policy-links">
+						<a href="terms&conditions.html" target="_blank">Terms And Conditions</a>
+						<a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+						<a href="refund-policy.html" target="_blank">Refund Policy</a>
 					</div>
 					<!-- contact social -->
 					<div class="col-md-4 col-md-push-4">
