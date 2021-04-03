@@ -5,6 +5,7 @@ const crypto = require("crypto");
 const Payment = require("../models/payment");
 const path = require("path");
 const EventRegistration = require("../models/eventRegistration");
+const SpeakerRegistration = require("../models/speakerRegistration");
 require("dotenv").config();
 
 var instance = new Razorpay({
@@ -236,6 +237,34 @@ router.post("/event-register", async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.render("eventRegistrationFailed");
+  }
+});
+
+//Routes to register for speaker's session
+
+router.get("/speaker-register", (req, res) => {
+  res.render("speakerRegistration");
+});
+
+router.post("/speaker-register", async (req, res) => {
+  try {
+    let { name, email, phone, speaker } = req.body;
+    let applicantData = new Object({
+      name,
+      email,
+      phone,
+      speaker,
+    });
+
+    let applicant = await new SpeakerRegistration(applicantData).save();
+
+    if (!applicant) {
+      return res.render("speakerRegistrationFailed");
+    }
+    res.render("speakerRegistrationSuccessful", { data: applicant });
+  } catch (error) {
+    console.log(error);
+    return res.render("speakerRegistrationFailed");
   }
 });
 
