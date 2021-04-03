@@ -255,7 +255,6 @@ router.post("/speaker-register", async (req, res) => {
       phone,
       speaker,
     });
-
     let applicant = await new SpeakerRegistration(applicantData).save();
 
     if (!applicant) {
