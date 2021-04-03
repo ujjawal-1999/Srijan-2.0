@@ -2,6 +2,7 @@ const router = require("express").Router();
 const WorkshopRegistration = require("../models/workshopRegistration");
 const Payment = require("../models/payment");
 const EventRegistration = require("../models/eventRegistration");
+const SpeakerRegistration = require("../models/speakerRegistration");
 
 router.get('/event-registration-list',async(req,res)=>{
     const applicants = await EventRegistration.find();
@@ -9,6 +10,20 @@ router.get('/event-registration-list',async(req,res)=>{
         applicants
     });
 })
+
+router.get('/speaker-registration-list',async(req,res)=>{
+    let speaker = req.query.speaker;
+    if(speaker == 'vikalp')
+        speaker = 'Vikalp Sahni'
+    if(speaker == 'bhaskar')
+        speaker = 'Bhaskar Majumdar'
+    const applicants = await SpeakerRegistration.find({speaker});
+    res.render('speaker-registration-list',{
+        applicants,
+        speaker
+    })
+})
+
 
 router.get('/workshop-registration-list',async(req,res)=>{
     let applicantsData = []

@@ -23,7 +23,7 @@ const SpeakerRegistrationSchema = new Schema(
   }
 );
 
-module.exports = WorkshopRegistration = mongoose.model(
+module.exports = SpeakerRegistration = mongoose.model(
   "SpeakerRegistration",
   SpeakerRegistrationSchema
 );

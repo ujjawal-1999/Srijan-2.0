@@ -242,8 +242,28 @@ router.post("/event-register", async (req, res) => {
 
 //Routes to register for speaker's session
 
-router.get("/speaker-register", (req, res) => {
-  res.render("speakerRegistration");
+router.get("/speaker-register", async (req, res) => {
+  try {
+    let speaker = req.query.speaker;
+    if (speaker == "vikalp") {
+      res.render("speaker-registration-form", {
+        speaker: "Vikalp Sahni",
+      });
+      return;
+    }
+    if (speaker == "bhaskar") {
+      res.render("speaker-registration-form", {
+        speaker: "Bhaskar Majumdar",
+      });
+      return;
+    }
+    res.render("speaker-registration-form", {
+      speaker: "Vikalp Sahni",
+    });
+  } catch (err) {
+    console.error(err);
+    res.render("error");
+  }
 });
 
 router.post("/speaker-register", async (req, res) => {

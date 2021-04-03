@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      href="/docsupport/bulb6-slow.gif"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Srijan | Speaker Registration List</title>
+</head>
+<body>
+    <div class="" style="margin-top: 5vh;">
+    <h1 style="text-align: center;">{{speaker}} Registration List</h1>
+    <table class="centered responsive-table highlight bordered">
+        <thead>
+          <tr>
+                <th data-field="key">Sl.No.</th>
+                <th data-field="Name"> Name</th>
+                <th data-field="Email">Email</th>
+                <th data-field="Phone">Phone</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {{#each applicants}}
+              <tr>
+                <td>{{@key}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.phone}}</td>
+              </tr>
+            {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
