@@ -8,6 +8,8 @@ const EventRegistration = require("../models/eventRegistration");
 const SpeakerRegistration = require("../models/speakerRegistration");
 require("dotenv").config();
 
+const { speakers } = require('../utils/speakers');
+
 var instance = new Razorpay({
   key_id: process.env.KEY_ID,
   key_secret: process.env.KEY_SECRET,
@@ -241,24 +243,11 @@ router.post("/event-register", async (req, res) => {
 });
 
 //Routes to register for speaker's session
-
 router.get("/speaker-register", async (req, res) => {
   try {
     let speaker = req.query.speaker;
-    if (speaker == "vikalp") {
-      res.render("speaker-registration-form", {
-        speaker: "Vikalp Sahni",
-      });
-      return;
-    }
-    if (speaker == "bhaskar") {
-      res.render("speaker-registration-form", {
-        speaker: "Bhaskar Majumdar",
-      });
-      return;
-    }
     res.render("speaker-registration-form", {
-      speaker: "Vikalp Sahni",
+      speaker: speakers[speaker],
     });
   } catch (err) {
     console.error(err);
