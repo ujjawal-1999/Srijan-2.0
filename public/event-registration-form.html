@@ -21,7 +21,7 @@
   <link rel="icon" href="docsupport/bulb6-slow.gif" type="image/gif" sizes="16x16" />
   <link rel="canonical" href="http://srijan-nits.in" />
   <!-- Google font -->
-  
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
@@ -56,11 +56,13 @@
     .mobile-space1 {
       width: 380px;
     }
-    .wsLabel{
-        margin: 0 0 1px
+
+    .wsLabel {
+      margin: 0 0 1px
     }
-    .text{
-        height: 99%;
+
+    .text {
+      height: 99%;
     }
 
     @media screen and (max-width: 768px) {
@@ -95,38 +97,39 @@
             <label>Team Leader Email</label>
             <input type="email" id="student-email" name="leaderEmail" required>
             <label>Team Leader Phone number</label>
-            <input type="tel" id="student-number" pattern="^[0-9]{10}$" title="10 digit phone number" onkeypress="return onlyNumberKey(event)" name="leaderPhone" required>
+            <input type="tel" id="student-number" pattern="^[0-9]{10}$" title="10 digit phone number"
+              onkeypress="return onlyNumberKey(event)" name="leaderPhone" required>
           </div>
         </section>
 
         <section>
-            <div class="text">
-              <div class="form-heading">
-                <h1>Team Members Name</h1>
-                <h3>(Including Team Leader)</h3>
-              </div>
-              <label>Team Member 1</label>
-              <input type="text" id="student-name" name="teamMembers" required>
-              <label>Team Member 2</label>
-              <input type="text" id="student-name" name="teamMembers">
-              <label>Team Member 3</label>
-              <input type="text" id="student-name" name="teamMembers">
-              <label>Team Member 4</label>
-              <input type="text" id="student-name" name="teamMembers">
+          <div class="text">
+            <div class="form-heading">
+              <h1>Team Members Name</h1>
+              <h3>(Including Team Leader)</h3>
             </div>
-          </section>
+            <label>Team Member 1</label>
+            <input type="text" id="student-name" name="teamMembers" required>
+            <label>Team Member 2</label>
+            <input type="text" id="student-name" name="teamMembers">
+            <label>Team Member 3</label>
+            <input type="text" id="student-name" name="teamMembers">
+            <label>Team Member 4</label>
+            <input type="text" id="student-name" name="teamMembers">
+          </div>
+        </section>
 
-          <section>
-            <div class="text">
-              <div class="form-heading">
-                <h1>Adress of Team Leader</h1>
-                <h3>(needed for sending rewards and goodies!)</h3>
-              </div>
-              <label>Permanent Address</label>
-              <textarea name="leaderAddress" id=""></textarea>
+        <section>
+          <div class="text">
+            <div class="form-heading">
+              <h1>Adress of Team Leader</h1>
+              <h3>(needed for sending rewards and goodies!)</h3>
             </div>
-          </section>
-          
+            <label>Permanent Address</label>
+            <textarea name="leaderAddress" id=""></textarea>
+          </div>
+        </section>
+
         <!-- <section>
           <div class="text">
             <div class="form-heading">
@@ -157,30 +160,52 @@
             </div>
             <label>Events</label>
             <div class="workshops">
-                  <label class="checkbox"><input class="ws" id="technical" name="events" type="checkbox"
-                    value="Outwit the Board Room"> <p class="wsLabel" >Outwit the Board Room</p> </label>
-                  <label class="checkbox"><input class="ws" id="skill_building" name="events" type="checkbox"
-                    value="Panel Discussion"><p class="wsLabel">Panel Discussion</p></label>
-                  <label class="checkbox"><input class="ws" id="financial_assistance" name="events" type="checkbox"
-                    value="Pitch Please"><p class="wsLabel">Pitch Please</p></label>
-                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
-                    value="IPL Auction"><p class="wsLabel">IPL Auction</p></label>
-                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
-                    value="Into the Interview"><p class="wsLabel">Into the Interview</p></label>
-                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
-                      value="Business Quiz"><p class="wsLabel">Business Quiz</p></label>
-                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
-                      value="RESUME your business"><p class="wsLabel">RESUME your business</p></label>
-                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
-                      value="TechNerds"><p class="wsLabel">TechNerds</p></label>
-                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
-                      value="Stock Market Investing"><p class="wsLabel">Stock Market Investing</p></label>
-                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
-                      value="Intern Fair"><p class="wsLabel">Intern Fair</p></label>
-                  <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
-                      value="Speaker Sessions"><p class="wsLabel">Speaker Sessions</p></label>
-            
-                </div>
+              <label class="checkbox"><input class="ws" id="technical" name="events" type="checkbox"
+                  value="Outwit the Board Room">
+                <p class="wsLabel">Outwit the Board Room</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="skill_building" name="events" type="checkbox"
+                  value="Panel Discussion">
+                <p class="wsLabel">Panel Discussion</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="financial_assistance" name="events" type="checkbox"
+                  value="Pitch Please">
+                <p class="wsLabel">Pitch Please</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
+                  value="IPL Auction">
+                <p class="wsLabel">IPL Auction</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
+                  value="Into the Interview">
+                <p class="wsLabel">Into the Interview</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
+                  value="Business Quiz">
+                <p class="wsLabel">Business Quiz</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
+                  value="RESUME your business">
+                <p class="wsLabel">RESUME your business</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
+                  value="TechNerds">
+                <p class="wsLabel">TechNerds</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
+                  value="Stock Market Investing">
+                <p class="wsLabel">Stock Market Investing</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
+                  value="Intern Fair">
+                <p class="wsLabel">Intern Fair</p>
+              </label>
+              <label class="checkbox"><input class="ws" id="entrepreneur_essentials" name="events" type="checkbox"
+                  value="Speaker Sessions">
+                <p class="wsLabel">Speaker Sessions</p>
+              </label>
+
+            </div>
             <!-- <label>Do you want T-shirt?</label>
             <label class="checkbox"><input id="tsCheckbox" type="checkbox" name="tshirt" value="Yes" checked>Yes</label>
             <div class="size">
@@ -195,17 +220,17 @@
               </select>
             </div> -->
           </div>
-          
+
         </section>
         <section>
           <div class="text">
             <!-- <div>Amount to be paid: Rs
                 <input style="font-weight: 100; width: 60px;" class="amount" type="number" name="amount" readonly />200/-
               </div> -->
-              <!-- <div class="form-heading">
+            <!-- <div class="form-heading">
                 <h3>Amount to be paid - 200/-</h3>
               </div> -->
-              <div class="form-heading">
+            <div class="form-heading">
               <h1>Confirm Submission?</h1>
             </div>
             <button id="proceed" class="proceed">Proceed</button>
