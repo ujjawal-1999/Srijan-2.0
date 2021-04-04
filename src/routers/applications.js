@@ -3,6 +3,7 @@ const WorkshopRegistration = require("../models/workshopRegistration");
 const Payment = require("../models/payment");
 const EventRegistration = require("../models/eventRegistration");
 const SpeakerRegistration = require("../models/speakerRegistration");
+const { speakers } = require('../utils/speakers');
 
 router.get('/event-registration-list',async(req,res)=>{
     const applicants = await EventRegistration.find();
@@ -13,14 +14,10 @@ router.get('/event-registration-list',async(req,res)=>{
 
 router.get('/speaker-registration-list',async(req,res)=>{
     let speaker = req.query.speaker;
-    if(speaker == 'vikalp')
-        speaker = 'Vikalp Sahni'
-    if(speaker == 'bhaskar')
-        speaker = 'Bhaskar Majumdar'
-    const applicants = await SpeakerRegistration.find({speaker});
+    const applicants = await SpeakerRegistration.find({speaker : speakers[speaker]});
     res.render('speaker-registration-list',{
         applicants,
-        speaker
+        speaker : speakers[speaker]
     })
 })
 
