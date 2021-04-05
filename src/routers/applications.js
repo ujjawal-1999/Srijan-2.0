@@ -16,7 +16,7 @@ router.get('/event-registration-list',async(req,res)=>{
 router.get('/speaker-registration-list',async(req,res)=>{
     let speaker = req.query.speaker;
     const applicants = await SpeakerRegistration.find({speaker : speakers[speaker]});
-    res.render('quiz-registration-list',{
+    res.render('speaker-registration-list',{
         applicants,
         speaker : speakers[speaker]
     })
@@ -24,7 +24,7 @@ router.get('/speaker-registration-list',async(req,res)=>{
 
 router.get('/business-quiz-registration-list',async(req,res)=>{
     const applicants = await BusinessQuizRegistration.find();
-    res.render('speaker-registration-list',{
+    res.render('quiz-registration-list',{
         applicants
     })
 })
