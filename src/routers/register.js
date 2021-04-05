@@ -6,6 +6,7 @@ const Payment = require("../models/payment");
 const path = require("path");
 const EventRegistration = require("../models/eventRegistration");
 const SpeakerRegistration = require("../models/speakerRegistration");
+const BusinessQuizRegistration = require("../models/businessQuizRegistration");
 require("dotenv").config();
 
 const { speakers } = require('../utils/speakers');
@@ -200,6 +201,10 @@ router.get("/workshop-register", (req, res) => {
   res.sendFile(workshopRegistrationForm);
 });
 
+router.get('/business-quiz-register',async(req,res)=>{
+  res.render('quiz-registration');
+})
+
 // Post route for event registration
 router.post("/event-register", async (req, res) => {
   try {
@@ -273,6 +278,28 @@ router.post("/speaker-register", async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.render("speakerRegistrationFailed");
+  }
+});
+
+router.post("/business-quiz-register", async (req, res) => {
+  try {
+    let { name, email, phone, event,address } = req.body;
+    let applicantData = new Object({
+      name,
+      email,
+      phone,
+      event,
+      address
+    });
+    let applicant = await new BusinessQuizRegistration(applicantData).save();
+
+    if (!applicant) {
+      return res.render("quizRegistrationFailed");
+    }
+    res.render("quizRegistrationSuccessful", { data: applicant });
+  } catch (error) {
+    console.log(error);
+    return res.render("quizRegistrationFailed");
   }
 });
 
