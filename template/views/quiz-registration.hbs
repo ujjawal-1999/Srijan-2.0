@@ -66,6 +66,12 @@
                 height: 0;
             }
         }
+        section{
+            height: auto;
+        }
+        .registration-event{
+            height: auto;
+        }
     </style>
 </head>
 
@@ -78,12 +84,14 @@
             <form class="speaker-registration" action="/business-quiz-register" method="POST" id="workshop-form">
 
                 <section>
-                    <div class="text">
+                    <div class="text" style="margin-bottom: 6vh; margin-top:2vh">
                         <div class="form-heading">
                             <h1>Business Quiz</h1>
                         </div>
-                        <label>Event</label>
-                        <input type="text" id="speaker-name" name="event" readonly value="Business Quiz">
+                        <div style="display:none">
+                            <label>Event</label>
+                            <input type="text" id="speaker-name" name="event" readonly value="Business Quiz">
+                        </div>
                         <label>Name</label>
                         <input type="text" id="student-name" name="name" required>
                         <label>Email Id</label>
@@ -91,14 +99,7 @@
                         <label>Phone number</label>
                         <input type="tel" pattern="^[0-9]{10}$" title="10 digit phone number"
                             onkeypress="return onlyNumberKey(event)" id="student-number" name="phone" required>
-                </section>
-                    <section>
-                        <div class="text">
-                            <div class="form-heading">
-                                <h1>Adress</h1>
-                                <h3>(needed for sending rewards and goodies!)</h3>
-                            </div>
-                            <label>Permanent Address</label>
+                            <label>Permanent Address(for sending rewards and goodies!)</label>
                             <textarea rows="6" name="address" id=""></textarea>
                         <button id="proceed" class="proceed">Register</button>
                         </div>
@@ -109,12 +110,12 @@
     </div>
 
     </div>
-    <div class="nav-icons">
+    {{!-- <div class="nav-icons">
     <button class="prev-btn"><i class='fas fa-angle-up'></i>
     </button>
     <button class="next-btn"><i class='fas fa-angle-down'></i>
     </button>
-  </div>
+  </div> --}}
     <script src="/js/registration-form.js"></script>
 </body>
 
