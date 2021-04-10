@@ -32,7 +32,7 @@ app.use(express.static(publicDirectoryPath));
 const port = process.env.PORT || 3000;
 
 app.use("/notify", notifyRouter);
-app.use("/", registerRouter);
+// app.use("/", registerRouter);
 app.use("/admin",applicantsRouter);
 
 app.get("*", (req, res) => {
